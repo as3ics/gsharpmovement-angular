@@ -1,0 +1,21 @@
+<section class="features-area ptb-100 bg-image">
+    <div class="container">
+        <div class="section-title" *ngFor="let sectionTitleContent of sectionTitle;">
+            <span>{{sectionTitleContent.subTitle}}</span>
+            <h2>{{sectionTitleContent.title}}</h2>
+            <p>{{sectionTitleContent.paragraphText}}</p>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4 col-md-6" *ngFor="let singleFeaturesContent of singleFeatures;">
+                <div class="single-features">
+                    <div class="icon">
+                        <i class="{{singleFeaturesContent.icon}}"></i>
+                    </div>
+                    <h3>{{singleFeaturesContent.title}}</h3>
+                    <p>{{singleFeaturesContent.paragraphText}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
