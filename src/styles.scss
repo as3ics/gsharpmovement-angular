@@ -7,8 +7,9 @@
 /*================================================
 Default CSS
 =================================================*/
-$main-color: #848434;
+$main-color: #a8b01c;
 $white-color: #ffffff;
+$work-overlay: #3816708b;
 $black-color: #000000;
 $paragraph-color: #828893;
 $font-family: "Open Sans", sans-serif;
@@ -1888,20 +1889,20 @@ Portfolio CSS
       margin-top: -4px;
       height: 10px;
     }
-    &::after {
-      position: absolute;
-      content: "";
-      width: 12px;
-      height: 2px;
-      z-index: -1;
-      background: $black-color;
-      left: 3px;
-      opacity: 0;
-      visibility: hidden;
-      transition: $transition;
-      bottom: 8px;
-      transform: rotate(0);
-    }
+    // &::after {
+    //   position: absolute;
+    //   content: "";
+    //   width: 12px;
+    //   height: 2px;
+    //   z-index: -1;
+    //   background: $black-color;
+    //   left: 3px;
+    //   opacity: 0;
+    //   visibility: hidden;
+    //   transition: $transition;
+    //   bottom: 8px;
+    //   transform: rotate(0);
+    // }
     &:first-child {
       &::before {
         display: none;
@@ -1960,14 +1961,14 @@ Portfolio CSS
         width: 100%;
         bottom: 0;
         height: 50%;
-        background: $main-color;
+        background: $work-overlay;
         right: -100%;
       }
       &::after {
         content: "";
         transition: $transition;
         position: absolute;
-        background: $main-color;
+        background: $work-overlay;
         top: 0;
         height: 50%;
         width: 100%;

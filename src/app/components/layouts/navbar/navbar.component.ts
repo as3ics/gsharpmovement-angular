@@ -60,7 +60,9 @@ export class NavbarComponent implements OnInit {
   async play() {
     this.audio.src = "assets/album/01.mp3";
     this.audio.load();
-    await this.audio.play();
+    try {
+      await this.audio.play();
+    } catch (err) {}
   }
 
   async stop() {
