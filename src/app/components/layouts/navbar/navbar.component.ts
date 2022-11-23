@@ -4,6 +4,7 @@ import { Component, ElementRef, HostListener, OnInit } from "@angular/core";
 import { ViewportScroller } from "@angular/common";
 import * as $ from "jquery";
 import { delay } from "rxjs/operators";
+import { Router } from "@angular/router";
 
 export const PLAY_BUTTON_LS = "LOCAL_STORAGE_PLAY_BUTTON";
 
@@ -19,7 +20,7 @@ export enum PlayButtonValues {
   styleUrls: ["./navbar.component.scss"],
 })
 export class NavbarComponent implements OnInit {
-  constructor(private viewportScroller: ViewportScroller) { }
+  constructor(private viewportScroller: ViewportScroller, private router: Router) { }
 
   ngOnInit() {
     this.init();
@@ -106,5 +107,9 @@ export class NavbarComponent implements OnInit {
       this.startAudio();
       console.log("Played");
     }
+  }
+
+  reload() {
+    window.location.reload();
   }
 }
