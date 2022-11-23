@@ -1,0 +1,28 @@
+# @format
+
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      nodejs: 14.x
+    commands:
+      - echo Building for production environment
+      - echo Entered the install phase...
+  pre_build:
+    commands:
+      - echo Entered the pre_build phase...
+      - npm ci
+  build:
+    commands:
+      - echo Entered the build phase...
+      - echo Build started on `date`
+      - npm run build
+  post_build:
+    commands:
+      - echo Entered the post_build phase...
+      - echo Build completed on `date`
+artifacts:
+  files:
+    - "**/*"
+  name: weshallprevail-$(date +%Y-%m-%d) \
+  base-directory: dist/weshallprevail
