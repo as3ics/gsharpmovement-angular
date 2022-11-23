@@ -7,7 +7,7 @@
 /*================================================
 Default CSS
 =================================================*/
-$main-color: #a8b01c;
+$main-color: #abad37;
 $white-color: #ffffff;
 $work-overlay: #3816708b;
 $black-color: #000000;
@@ -20,15 +20,18 @@ $transition: 0.5s;
 body {
   padding: 0;
   margin: 0;
+
   font: {
     size: $font-size;
     family: $font-family;
   }
 }
+
 a {
   text-decoration: none !important;
   transition: $transition;
 }
+
 .h1,
 .h2,
 .h3,
@@ -43,13 +46,16 @@ h5,
 h6 {
   color: $black-color;
   margin-bottom: 15px;
+
   font: {
     family: $font-family2;
   }
+
   &:last-child {
     margin-bottom: 0;
   }
 }
+
 p {
   line-height: 1.8;
   margin-bottom: 15px;
@@ -59,25 +65,31 @@ p {
     margin-bottom: 0;
   }
 }
+
 .ml-auto {
   margin-left: auto;
 }
+
 img {
   max-width: 100%;
   height: auto;
 }
+
 .mt-30 {
   margin-top: 30px;
 }
+
 .ptb-100 {
   padding: {
     top: 100px;
     bottom: 100px;
   }
 }
+
 :focus {
   outline: 0 !important;
 }
+
 .d-table {
   width: 100%;
   height: 100%;
@@ -86,6 +98,7 @@ img {
     vertical-align: middle;
   }
 }
+
 /*btn btn-primary*/
 .btn {
   color: $white-color;
@@ -94,11 +107,13 @@ img {
   padding: 15px 30px;
   border-radius: 0;
   transition: $transition;
+
   font: {
     weight: 600;
     size: $font-size;
   }
 }
+
 .btn-primary {
   color: $white-color;
   background: $black-color;
@@ -116,44 +131,53 @@ img {
     z-index: -1;
     transition: $transition;
   }
+
   &::before {
     left: 0;
   }
+
   &::after {
     right: 0;
   }
+
   &:hover::before,
   &:hover::after,
   &:focus::before,
   &:focus::after {
     width: 0;
   }
+
   &.focus,
   &:focus {
     box-shadow: unset;
     color: $white-color;
   }
+
   &:hover,
   &:focus {
     background: $black-color;
     color: $white-color;
     box-shadow: unset;
   }
+
   &:not(:disabled):not(.disabled).active:focus,
   &:not(:disabled):not(.disabled):active:focus {
     box-shadow: unset;
   }
+
   &:not(:disabled):not(.disabled).active,
   &:not(:disabled):not(.disabled):active {
     background: $black-color;
     color: $white-color;
   }
+
   &.disabled,
   &:disabled {
     opacity: 1;
     background: $black-color;
   }
 }
+
 /*form-control*/
 .form-control {
   height: 50px;
@@ -169,42 +193,48 @@ img {
     border-color: $main-color;
   }
 }
+
 /*section-title*/
 .section-title {
   text-align: center;
   position: relative;
   z-index: 1;
+
   margin: {
     bottom: 60px;
     top: -5px;
   }
+
   span {
     text-transform: uppercase;
     display: block;
     letter-spacing: 0.5px;
     margin-bottom: 12px;
     color: $main-color;
+
     font: {
       size: 14px;
       weight: 700;
     }
   }
+
   h2 {
     margin-bottom: 0;
+
     font: {
       size: 35px;
       weight: 500;
     }
+
     b {
       font-weight: 600 !important;
-      background: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0) 80%,
-        $main-color 80%
-      );
+      background: linear-gradient(to bottom,
+          rgba(0, 0, 0, 0) 80%,
+          $main-color 80%);
       background-size: 90px 1.1em !important;
     }
   }
+
   p {
     max-width: 520px;
     margin: 15px auto 0;
@@ -250,6 +280,7 @@ Preloader CSS
       border-top-color: $white-color;
       animation: spin-reverse 0.6s linear infinite;
     }
+
     &::after {
       content: "";
       position: absolute;
@@ -264,18 +295,22 @@ Preloader CSS
     }
   }
 }
+
 @keyframes spin {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
 }
+
 @keyframes spin-reverse {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(-360deg);
   }
@@ -305,9 +340,11 @@ Navbar CSS
     animation: 500ms ease-in-out 0s normal none 1 running fadeInDown;
   }
 }
+
 .bg-light {
   background-color: transparent !important;
 }
+
 .navbar-brand {
   img {
     &:last-child {
@@ -315,28 +352,35 @@ Navbar CSS
     }
   }
 }
+
 #play-navbar {
   img {
     padding-right: 40px;
+
     &:last-child {
       display: none;
     }
+
     &:first-child {
       display: block;
     }
   }
 }
+
 #mute-navbar {
   img {
     padding-right: 40px;
+
     &:last-child {
       display: none;
     }
+
     &:first-child {
       display: block;
     }
   }
 }
+
 .navbar-light {
   .navbar-nav {
     .nav-item {
@@ -344,15 +388,18 @@ Navbar CSS
         right: 13px;
         left: 13px;
       }
+
       .nav-link {
         color: $white-color;
         cursor: pointer;
         padding: 0;
         position: relative;
+
         font: {
           size: 15px;
           weight: 600;
         }
+
         &::before {
           content: "";
           position: absolute;
@@ -368,6 +415,7 @@ Navbar CSS
           bottom: 0;
           transition: $transition;
         }
+
         &:hover,
         &.active {
           color: $main-color !important;
@@ -379,12 +427,15 @@ Navbar CSS
           }
         }
       }
+
       &:last-child {
         padding-right: 0;
       }
+
       &:first-child {
         padding-left: 0;
       }
+
       &.active {
         .nav-link {
           color: $main-color;
@@ -398,39 +449,48 @@ Navbar CSS
       }
     }
   }
+
   &.is-sticky {
     .navbar-brand {
       img {
         &:last-child {
           display: block;
         }
+
         &:first-child {
           display: none;
         }
       }
     }
+
     #play-navbar {
       img {
         padding-right: 40px;
+
         &:last-child {
           display: block;
         }
+
         &:first-child {
           display: none;
         }
       }
     }
+
     #mute-navbar {
       img {
         padding-right: 40px;
+
         &:last-child {
           display: block;
         }
+
         &:first-child {
           display: none;
         }
       }
     }
+
     .navbar-nav {
       .nav-item {
         .nav-link {
@@ -439,6 +499,7 @@ Navbar CSS
           &::before {
             display: none;
           }
+
           &:hover,
           &.active {
             color: $main-color;
@@ -449,6 +510,7 @@ Navbar CSS
             }
           }
         }
+
         &.active {
           .nav-link {
             color: $main-color;
@@ -463,12 +525,14 @@ Navbar CSS
     }
   }
 }
+
 .navbar-light {
   .navbar-toggler {
     .navbar-toggler-icon {
       background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
     }
   }
+
   &.is-sticky {
     .navbar-toggler {
       .navbar-toggler-icon {
@@ -486,20 +550,23 @@ Navbar CSS
       bottom: 15px;
     }
   }
+
   .navbar-expand-lg {
-    > .container {
+    >.container {
       padding: {
         left: 15px;
         right: 15px;
       }
     }
   }
+
   .navbar-light {
     .navbar-toggler {
       border-color: $white-color;
       box-shadow: unset;
       border-radius: 0;
     }
+
     .navbar-nav {
       background-color: $white-color;
       padding: 10px 20px;
@@ -512,6 +579,7 @@ Navbar CSS
           top: 10px;
           bottom: 10px;
         }
+
         .nav-link {
           color: $black-color;
           display: block;
@@ -520,11 +588,13 @@ Navbar CSS
           &:hover {
             color: $main-color;
           }
+
           &.active {
             &::before {
               bottom: 50%;
             }
           }
+
           &::before {
             margin: {
               bottom: -5px;
@@ -534,15 +604,18 @@ Navbar CSS
         }
       }
     }
+
     &.is-sticky {
       padding: {
         top: 15px;
         bottom: 15px;
       }
+
       .navbar-toggler {
         border-color: $black-color;
         box-shadow: unset;
       }
+
       .navbar-nav {
         border: 1px solid #eeeeee;
 
@@ -569,11 +642,13 @@ Main Banner CSS
   height: 100vh;
   position: relative;
   z-index: 1;
+
   background: {
     position: center center;
     size: cover;
     repeat: no-repeat;
   }
+
   &::before {
     content: "";
     position: absolute;
@@ -585,6 +660,7 @@ Main Banner CSS
     background: rgba(13, 15, 20, 0.55);
   }
 }
+
 .video-banner {
   overflow: hidden;
 
@@ -599,57 +675,68 @@ Main Banner CSS
     z-index: -2;
   }
 }
+
 .ripple-effect {
   &.main-banner {
     &::before {
       z-index: 1;
     }
+
     .main-banner-content {
       position: relative;
       z-index: 2;
     }
   }
 }
+
 .item-bg1 {
   background: {
     image: url(assets/img/main-banner1.jpg);
   }
 }
+
 .item-bg2 {
   background: {
     image: url(assets/img/main-banner2.jpg);
   }
 }
+
 .item-bg3 {
   background: {
     image: url(assets/img/main-banner3.jpg);
   }
 }
+
 .item-bg4 {
   background: {
     image: url(assets/img/main-banner4.jpg);
   }
 }
+
 .item-bg5 {
   background: {
     image: url(assets/img/main-banner5.jpg);
   }
 }
+
 .item-bg6 {
   background: {
     image: url(assets/img/main-banner6.jpg);
   }
 }
+
 .item-bg7 {
   background: {
     image: url(assets/img/main-banner7.jpg);
   }
 }
+
 .item-bg8 {
   background: {
     image: url(assets/img/main-banner8.jpg);
   }
 }
+
 .main-banner-content {
   max-width: 700px;
   position: relative;
@@ -666,61 +753,68 @@ Main Banner CSS
       }
     }
   }
+
   span {
     color: $white-color;
     text-transform: uppercase;
     display: block;
     letter-spacing: 2px;
     opacity: 0.88;
+
     font: {
       weight: 500;
       size: 16px;
     }
   }
+
   h1 {
     color: $white-color;
     margin: 20px 0 25px;
+
     font: {
       size: 55px;
       family: $font-family;
       weight: 300;
     }
+
     b {
-      background: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0) 80%,
-        $main-color 80%
-      );
+      background: linear-gradient(to bottom,
+          rgba(0, 0, 0, 0) 80%,
+          $main-color 80%);
       background-size: 100px 1.2em !important;
+
       font: {
         weight: 700;
         family: $font-family2;
       }
     }
+
     .typewrite {
-      background: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0) 80%,
-        $main-color 80%
-      );
+      background: linear-gradient(to bottom,
+          rgba(0, 0, 0, 0) 80%,
+          $main-color 80%);
       background-size: 100px 1em !important;
       display: inline-block;
+
       font: {
         weight: 700;
         family: $font-family2;
       }
+
       span {
         text-transform: capitalize;
         margin: 0;
         opacity: 1;
         display: inline;
         letter-spacing: 0;
+
         font: {
           size: 55px;
         }
       }
     }
   }
+
   p {
     color: $white-color;
     margin-bottom: 30px;
@@ -728,16 +822,19 @@ Main Banner CSS
     opacity: 0.88;
     font-size: 16.5px;
   }
+
   .btn-box {
     span {
       display: inline-block;
       letter-spacing: 0;
       margin: 0 15px;
+
       font: {
         weight: 700;
         size: 14px;
       }
     }
+
     .video-btn {
       color: #dddddd;
       display: inline-block;
@@ -771,6 +868,7 @@ Main Banner CSS
           background: rgba(255, 255, 255, 0.5);
         }
       }
+
       &:hover,
       &:focus {
         color: $white-color;
@@ -783,6 +881,7 @@ Main Banner CSS
     }
   }
 }
+
 .main-banner {
   &.main-banner-with-form {
     height: 840px;
@@ -793,6 +892,7 @@ Main Banner CSS
     }
   }
 }
+
 .banner-form {
   background: $white-color;
   box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.08);
@@ -813,26 +913,31 @@ Main Banner CSS
     margin: auto;
     border-radius: 3px;
   }
+
   form {
     .form-control {
       border: 1px solid #eeeeee;
       font-size: 14px;
       border-radius: 2px;
     }
+
     label {
       color: $paragraph-color;
       margin-bottom: 8px;
       font-size: 15px;
     }
+
     select.form-control {
       height: 50px;
       cursor: pointer;
     }
+
     .btn {
       margin-top: 10px;
     }
   }
 }
+
 .banner-video {
   position: relative;
   text-align: center;
@@ -841,14 +946,12 @@ Main Banner CSS
   overflow: hidden;
 
   &::before {
-    background: linear-gradient(
-      to bottom,
-      #0975bc,
-      #0d5b93,
-      #0d426d,
-      #092b48,
-      #041527
-    );
+    background: linear-gradient(to bottom,
+        #0975bc,
+        #0d5b93,
+        #0d426d,
+        #092b48,
+        #041527);
     width: 100%;
     height: 100%;
     left: 0;
@@ -858,9 +961,11 @@ Main Banner CSS
     opacity: 0.7;
     z-index: 1;
   }
+
   img {
     transition: $transition;
   }
+
   .video-btn {
     position: absolute;
     left: 0;
@@ -891,12 +996,14 @@ Main Banner CSS
       border-radius: 50%;
       background: rgba(148, 107, 255, 0.5);
     }
+
     &:hover,
     &:focus {
       color: $main-color;
       background-color: $white-color;
     }
   }
+
   &:hover,
   &:focus {
     img {
@@ -904,6 +1011,7 @@ Main Banner CSS
     }
   }
 }
+
 .text-animation-home {
   .main-banner-content {
     h1 {
@@ -911,6 +1019,7 @@ Main Banner CSS
     }
   }
 }
+
 #particles-js {
   width: 100%;
   height: 100%;
@@ -918,6 +1027,7 @@ Main Banner CSS
   left: 0;
   top: 0;
 }
+
 #particles-js-bubble {
   width: 100%;
   height: 100%;
@@ -925,6 +1035,7 @@ Main Banner CSS
   left: 0;
   top: 0;
 }
+
 #particles-js-star {
   width: 100%;
   height: 100%;
@@ -932,6 +1043,7 @@ Main Banner CSS
   left: 0;
   top: 0;
 }
+
 #particles-js-big-bubble {
   width: 100%;
   height: 100%;
@@ -939,6 +1051,7 @@ Main Banner CSS
   left: 0;
   top: 0;
 }
+
 #particles-js-small-bubble {
   width: 100%;
   height: 100%;
@@ -946,6 +1059,7 @@ Main Banner CSS
   left: 0;
   top: 0;
 }
+
 .slideshow-banner {
   .slideshow {
     z-index: -2;
@@ -963,23 +1077,28 @@ Main Banner CSS
         opacity: 0;
         z-index: -2;
         animation: imageAnimation 24s linear infinite 0s;
+
         background: {
           size: cover;
           position: center center;
           repeat: no-repeat;
         }
       }
+
       &:nth-child(1) span {
         background-image: url(assets/img/main-banner8.jpg);
       }
+
       &:nth-child(2) span {
         background-image: url(assets/img/main-banner2.jpg);
         animation-delay: 6s;
       }
+
       &:nth-child(3) span {
         background-image: url(assets/img/main-banner5.jpg);
         animation-delay: 12s;
       }
+
       &:nth-child(4) span {
         background-image: url(assets/img/main-banner7.jpg);
         animation-delay: 18s;
@@ -987,6 +1106,7 @@ Main Banner CSS
     }
   }
 }
+
 .clip-path-banner {
   clip-path: polygon(0 0, 100% 0, 100% 90%, 70% 100%, 0 90%);
 
@@ -994,6 +1114,7 @@ Main Banner CSS
     margin-top: 0;
   }
 }
+
 .clip-path-banner-two {
   clip-path: polygon(0 0, 100% 0, 100% 90%, 30% 100%, 0 90%);
 
@@ -1001,6 +1122,7 @@ Main Banner CSS
     margin-top: 0;
   }
 }
+
 .creative-banner {
   .creative-shape {
     position: absolute;
@@ -1008,25 +1130,26 @@ Main Banner CSS
     left: 0;
     width: 100%;
   }
+
   .main-banner-content {
     margin-top: 0;
   }
 }
+
 .gradient-banner {
   &.main-banner {
     &::before {
-      background: linear-gradient(
-        to left bottom,
-        #292e49,
-        #303d55,
-        #394b61,
-        #455a6b,
-        #536976
-      );
+      background: linear-gradient(to left bottom,
+          #292e49,
+          #303d55,
+          #394b61,
+          #455a6b,
+          #536976);
       opacity: 0.9;
     }
   }
 }
+
 .home-slides {
   &.owl-theme {
     .owl-nav {
@@ -1050,13 +1173,16 @@ Main Banner CSS
         transition: $transition;
         opacity: 0.7;
         margin-top: -50px;
+
         font: {
           size: 28px;
         }
+
         &.owl-next {
           left: auto;
           right: 50px;
         }
+
         &:hover {
           background-color: $main-color;
           color: $white-color;
@@ -1066,6 +1192,7 @@ Main Banner CSS
         }
       }
     }
+
     &:hover,
     &:focus {
       .owl-nav {
@@ -1083,40 +1210,50 @@ Main Banner CSS
     }
   }
 }
+
 @keyframes ripple {
+
   0%,
   35% {
     transform: scale(0);
     opacity: 1;
   }
+
   50% {
     transform: scale(1.5);
     opacity: 0.8;
   }
+
   100% {
     opacity: 0;
     transform: scale(2);
   }
 }
+
 @keyframes imageAnimation {
   0% {
     opacity: 0;
     animation-timing-function: ease-in;
   }
+
   12.5% {
     opacity: 1;
     animation-timing-function: ease-out;
   }
+
   25% {
     opacity: 1;
   }
+
   37.5% {
     opacity: 0;
   }
+
   100% {
     opacity: 0;
   }
 }
+
 .no-cssanimations {
   .slideshow {
     li {
@@ -1126,6 +1263,7 @@ Main Banner CSS
     }
   }
 }
+
 .shape1 {
   position: absolute;
   left: 70px;
@@ -1134,6 +1272,7 @@ Main Banner CSS
   animation: movebounce 5s linear infinite;
   opacity: 0.6;
 }
+
 .shape2 {
   position: absolute;
   right: 70px;
@@ -1141,6 +1280,7 @@ Main Banner CSS
   z-index: -1;
   opacity: 0.6;
 }
+
 .shape3 {
   position: absolute;
   left: 70px;
@@ -1148,6 +1288,7 @@ Main Banner CSS
   z-index: -1;
   opacity: 0.6;
 }
+
 .shape4 {
   position: absolute;
   right: 100px;
@@ -1156,27 +1297,33 @@ Main Banner CSS
   opacity: 0.6;
   animation: movebounce 5s linear infinite;
 }
+
 .rotateme {
   animation-name: rotateme;
   animation-duration: 40s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
+
 @keyframes rotateme {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
+
 @keyframes movebounce {
   0% {
     transform: translateY(0px);
   }
+
   50% {
     transform: translateY(20px);
   }
+
   100% {
     transform: translateY(0px);
   }
@@ -1199,6 +1346,7 @@ Features CSS
     }
   }
 }
+
 .single-features {
   background-color: $white-color;
   box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
@@ -1211,24 +1359,30 @@ Features CSS
   .icon {
     transition: $transition;
     color: $main-color;
+
     font: {
       size: 45px;
     }
   }
+
   h3 {
     transition: $transition;
+
     font: {
       size: 22px;
       weight: 600;
     }
+
     margin: {
       top: 15px;
       bottom: 12px;
     }
   }
+
   p {
     transition: $transition;
   }
+
   &:hover,
   &:focus {
     background-color: $main-color;
@@ -1237,23 +1391,28 @@ Features CSS
     .icon {
       color: $white-color;
     }
+
     h3 {
       color: $white-color;
     }
+
     p {
       color: $white-color;
       opacity: 0.88;
     }
   }
+
   &.active {
     background-color: $main-color;
 
     .icon {
       color: $white-color;
     }
+
     h3 {
       color: $white-color;
     }
+
     p {
       color: $white-color;
       opacity: 0.88;
@@ -1276,6 +1435,7 @@ About CSS
       repeat: no-repeat;
     }
   }
+
   &.bg-image2 {
     background: {
       image: url(assets/img/bg.jpg);
@@ -1285,6 +1445,7 @@ About CSS
     }
   }
 }
+
 .about-image {
   .col-lg-6 {
     &:first-child {
@@ -1294,6 +1455,7 @@ About CSS
         }
       }
     }
+
     &:nth-child(2) {
       .image {
         img {
@@ -1301,6 +1463,7 @@ About CSS
         }
       }
     }
+
     &:nth-child(3) {
       .image {
         img {
@@ -1308,6 +1471,7 @@ About CSS
         }
       }
     }
+
     &:last-child {
       .image {
         img {
@@ -1316,6 +1480,7 @@ About CSS
       }
     }
   }
+
   .image {
     img {
       box-shadow: 0px 10px 20px 0px rgba(130, 136, 147, 0.15);
@@ -1328,6 +1493,7 @@ About CSS
     }
   }
 }
+
 .about-content {
   padding-left: 10px;
 
@@ -1337,27 +1503,30 @@ About CSS
     letter-spacing: 0.5px;
     margin-bottom: 10px;
     color: $main-color;
+
     font: {
       size: 14px;
       weight: 700;
     }
   }
+
   h2 {
     margin-bottom: 15px;
+
     font: {
       size: 33px;
       weight: 500;
     }
+
     b {
       font-weight: 600 !important;
-      background: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0) 80%,
-        $main-color 80%
-      );
+      background: linear-gradient(to bottom,
+          rgba(0, 0, 0, 0) 80%,
+          $main-color 80%);
       background-size: 90px 1.1em !important;
     }
   }
+
   ul {
     padding: 0;
     margin: 15px 0 0;
@@ -1373,6 +1542,7 @@ About CSS
       &:last-child {
         margin-bottom: 0;
       }
+
       &::before {
         content: "";
         top: 6px;
@@ -1385,6 +1555,7 @@ About CSS
       }
     }
   }
+
   p {
     margin: {
       bottom: 0;
@@ -1399,6 +1570,7 @@ CTA CSS
 .cta-area {
   position: relative;
   z-index: 1;
+
   background: {
     position: center center;
     size: cover;
@@ -1406,10 +1578,12 @@ CTA CSS
     repeat: no-repeat;
     image: url(assets/img/cta-bg.jpg);
   }
+
   padding: {
     top: 70px;
     bottom: 70px;
   }
+
   &::before {
     left: 0;
     top: 0;
@@ -1421,37 +1595,41 @@ CTA CSS
     z-index: -1;
     opacity: 0.85;
   }
+
   .cta-content {
     h3 {
       text-transform: capitalize;
       margin-bottom: 0;
       color: $white-color;
+
       font: {
         size: 34px;
         weight: 500;
       }
+
       b {
         font-weight: 600 !important;
-        background: linear-gradient(
-          to bottom,
-          rgba(0, 0, 0, 0) 80%,
-          $black-color 80%
-        );
+        background: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0) 80%,
+            $black-color 80%);
         background-size: 90px 1.1em !important;
       }
     }
+
     span {
       text-transform: capitalize;
       display: block;
       color: $white-color;
       margin-top: 12px;
       opacity: 0.88;
+
       font: {
         size: 14px;
         weight: 600;
       }
     }
   }
+
   .btn {
     color: $black-color;
 
@@ -1459,6 +1637,7 @@ CTA CSS
     &:focus {
       color: $white-color;
     }
+
     &::before,
     &::after {
       background: $white-color;
@@ -1474,6 +1653,7 @@ Services CSS
   padding-bottom: 70px;
   z-index: 1;
 }
+
 .single-services {
   margin-bottom: 30px;
   transition: $transition;
@@ -1497,9 +1677,11 @@ Services CSS
       visibility: hidden;
       transition: $transition;
     }
+
     img {
       transition: $transition;
     }
+
     .icon {
       position: absolute;
       left: 0;
@@ -1521,23 +1703,28 @@ Services CSS
       transition: $transition;
     }
   }
+
   .services-content {
     padding: 30px 20px;
 
     h3 {
       transition: $transition;
+
       font: {
         size: 22px;
         weight: 600;
       }
+
       margin: {
         bottom: 12px;
       }
     }
+
     p {
       transition: $transition;
     }
   }
+
   &:hover,
   &:focus {
     background: $main-color;
@@ -1546,17 +1733,21 @@ Services CSS
       img {
         transform: scale(1.4);
       }
+
       &::before {
         opacity: 0.7;
         visibility: visible;
       }
+
       .icon {
         transform: translateY(-50%);
         opacity: 1;
         visibility: visible;
       }
     }
+
     .services-content {
+
       h3,
       p {
         color: $white-color;
@@ -1581,6 +1772,7 @@ Who We Are CSS
       repeat: no-repeat;
     }
   }
+
   .section-title {
     text-align: left;
     margin-bottom: 0;
@@ -1593,10 +1785,12 @@ Who We Are CSS
       }
     }
   }
+
   .content {
     p {
       margin-bottom: 0;
     }
+
     ul {
       padding: 0;
       list-style-type: none;
@@ -1634,22 +1828,27 @@ Skill CSS
 .skill-image {
   width: 100%;
   height: 100%;
+
   background: {
     image: url(assets/img/skill-bg.png);
     position: center center;
     size: cover;
     repeat: no-repeat;
   }
+
   img {
     display: none;
   }
 }
+
 .skill-content {
   background-color: $main-color;
+
   padding: {
     left: 100px;
     right: 100px;
   }
+
   .section-title {
     text-align: left;
     margin-bottom: 35px;
@@ -1658,26 +1857,28 @@ Skill CSS
       color: $white-color;
       opacity: 0.95;
     }
+
     h2 {
       color: $white-color;
 
       b {
-        background: linear-gradient(
-          to bottom,
-          rgba(0, 0, 0, 0) 80%,
-          $black-color 80%
-        );
+        background: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0) 80%,
+            $black-color 80%);
       }
     }
+
     p {
       color: $white-color;
       opacity: 0.95;
+
       margin: {
         left: 0;
         right: 0;
       }
     }
   }
+
   .skills {
     position: relative;
 
@@ -1692,25 +1893,30 @@ Skill CSS
         .skill-title {
           margin-bottom: 0;
           color: $white-color;
+
           font: {
             size: 16px;
             weight: 600;
           }
         }
+
         .skill-percentage {
           position: absolute;
           right: 0;
           top: 1px;
           color: $white-color;
+
           font: {
             size: 15px;
             weight: 600;
           }
         }
       }
+
       &:last-child {
         margin-bottom: 0;
       }
+
       .skill-bar {
         position: relative;
         width: 100%;
@@ -1719,10 +1925,12 @@ Skill CSS
           position: relative;
           width: 100%;
           border-radius: 30px;
+
           border: {
             top: 3px solid $black-color;
             bottom: 3px solid $black-color;
           }
+
           .bar {
             position: absolute;
             left: 0;
@@ -1756,6 +1964,7 @@ Why We Different CSS
     }
   }
 }
+
 .tab {
   .tabs {
     list-style-type: none;
@@ -1785,6 +1994,7 @@ Why We Different CSS
           border-color: $main-color;
         }
       }
+
       &.current {
         a {
           background: $main-color;
@@ -1794,23 +2004,28 @@ Why We Different CSS
       }
     }
   }
+
   .tabs_item {
     display: none;
 
     &:first-child {
       display: block;
     }
+
     .tabs_item_content {
       h3 {
         margin-bottom: 12px;
+
         font: {
           size: 22px;
           weight: 600;
         }
       }
+
       p {
         margin-bottom: 0;
       }
+
       ul {
         padding: 0;
         list-style-type: none;
@@ -1829,6 +2044,7 @@ Why We Different CSS
           &:last-child {
             margin-bottom: 0;
           }
+
           &::before {
             content: "";
             top: 50%;
@@ -1863,6 +2079,7 @@ Portfolio CSS
     }
   }
 }
+
 .shorting-menu {
   text-align: center;
   margin-bottom: 40px;
@@ -1889,6 +2106,7 @@ Portfolio CSS
       margin-top: -4px;
       height: 10px;
     }
+
     // &::after {
     //   position: absolute;
     //   content: "";
@@ -1908,6 +2126,7 @@ Portfolio CSS
         display: none;
       }
     }
+
     &:hover,
     &:focus,
     &.active {
@@ -1921,11 +2140,13 @@ Portfolio CSS
     }
   }
 }
+
 .shorting {
   .mix {
     display: none;
   }
 }
+
 .single-work {
   margin-bottom: 30px;
   overflow: hidden;
@@ -1940,12 +2161,14 @@ Portfolio CSS
       z-index: 1;
     }
   }
+
   .work-image {
     position: relative;
 
     img {
       transition: $transition;
     }
+
     .work-overlay {
       position: absolute;
       overflow: hidden;
@@ -1964,6 +2187,7 @@ Portfolio CSS
         background: $work-overlay;
         right: -100%;
       }
+
       &::after {
         content: "";
         transition: $transition;
@@ -1974,6 +2198,7 @@ Portfolio CSS
         width: 100%;
         left: -100%;
       }
+
       h3 {
         color: transparent;
         overflow: hidden;
@@ -1984,10 +2209,12 @@ Portfolio CSS
         margin: 0;
         transition: $transition;
         z-index: 2;
+
         font: {
           size: 22px;
           weight: 600;
         }
+
         &::before {
           content: "";
           background: $black-color;
@@ -2000,6 +2227,7 @@ Portfolio CSS
           right: auto;
         }
       }
+
       span {
         color: transparent;
         overflow: hidden;
@@ -2010,9 +2238,11 @@ Portfolio CSS
         right: 25px;
         transition: $transition;
         text-align: center;
+
         font: {
           weight: 600;
         }
+
         &::before {
           content: "";
           background: $white-color;
@@ -2026,12 +2256,14 @@ Portfolio CSS
       }
     }
   }
+
   &:hover,
   &:focus {
     .work-image {
       img {
         transform: scale(1.3);
       }
+
       .work-overlay {
         &::before {
           right: 0;
@@ -2040,11 +2272,13 @@ Portfolio CSS
           height: 50%;
           transition: all 0.8s;
         }
+
         &::after {
           left: 0;
           opacity: 1;
           transition: all 0.8s;
         }
+
         span {
           color: $white-color;
 
@@ -2052,6 +2286,7 @@ Portfolio CSS
             right: -100%;
           }
         }
+
         h3 {
           color: $white-color;
 
@@ -2079,6 +2314,7 @@ Fun Facts CSS
       repeat: no-repeat;
     }
   }
+
   .section-title {
     margin-bottom: 0;
     text-align: left;
@@ -2092,47 +2328,58 @@ Fun Facts CSS
     }
   }
 }
+
 .counter-wrap {
   .single-counter {
     padding-left: 125px;
     position: relative;
+
     margin: {
       left: 40px;
       bottom: 30px;
     }
+
     h2 {
       position: absolute;
       left: 0;
       top: 0;
       color: $main-color;
       margin-bottom: 0;
+
       font: {
         size: 45px;
         weight: 600;
       }
     }
+
     h3 {
       margin-bottom: 12px;
+
       font: {
         size: 22px;
         weight: 600;
       }
     }
+
     p {
       margin-bottom: 0;
     }
+
     &:last-child {
       margin-bottom: 0;
     }
   }
+
   .odometer-formatting-mark {
     display: none;
   }
 }
+
 /*funfacts-style-two*/
 .funfacts-area-two {
   position: relative;
   z-index: 1;
+
   background: {
     position: center center;
     size: cover;
@@ -2140,6 +2387,7 @@ Fun Facts CSS
     repeat: no-repeat;
     image: url(assets/img/funfacts-bg.jpg);
   }
+
   &::before {
     left: 0;
     top: 0;
@@ -2151,6 +2399,7 @@ Fun Facts CSS
     opacity: 0.7;
   }
 }
+
 .single-funfact {
   text-align: center;
 
@@ -2158,18 +2407,22 @@ Fun Facts CSS
     color: $main-color;
     font-size: 40px;
   }
+
   .odometer-formatting-mark {
     display: none;
   }
+
   h3 {
     margin: 25px 0 6px;
     display: block !important;
     color: $white-color;
+
     font: {
       size: 35px;
       weight: 700;
     }
   }
+
   p {
     color: $white-color;
     opacity: 0.88;
@@ -2192,6 +2445,7 @@ Team CSS
     }
   }
 }
+
 .team-box {
   overflow: hidden;
   position: relative;
@@ -2209,6 +2463,7 @@ Team CSS
     z-index: 2;
     transition: all 1s ease 0s;
   }
+
   &::after {
     content: "";
     display: block;
@@ -2222,12 +2477,14 @@ Team CSS
     z-index: 1;
     transition: all 1s ease 0s;
   }
+
   img {
     width: auto !important;
     transform: scale(1);
     transition: all 1s ease 0s;
     display: inline-block !important;
   }
+
   .box-content {
     padding: 20px;
     text-align: center;
@@ -2252,16 +2509,19 @@ Team CSS
 
       .title {
         margin-bottom: 0;
+
         font: {
           size: 22px;
           weight: 600;
         }
       }
+
       .post {
         display: block;
         margin-top: 6px;
         color: $main-color;
       }
+
       ul {
         padding: 0;
         list-style-type: none;
@@ -2292,11 +2552,13 @@ Team CSS
       }
     }
   }
+
   &:hover,
   &:focus {
     &::before {
       border: 1px solid rgba(255, 255, 255, 0.18);
     }
+
     &::after {
       top: 0;
       left: 0;
@@ -2304,9 +2566,11 @@ Team CSS
       right: 0;
       opacity: 0;
     }
+
     img {
       transform: scale(1.2);
     }
+
     .box-content {
       top: 6px;
       left: 6px;
@@ -2319,6 +2583,7 @@ Team CSS
     }
   }
 }
+
 .team-slides {
   &.owl-theme {
     .owl-nav {
@@ -2348,12 +2613,14 @@ Team CSS
           left: auto;
           right: 0;
         }
+
         &:hover {
           background-color: $main-color;
           color: $white-color;
         }
       }
     }
+
     &:hover,
     &:focus {
       .owl-nav {
@@ -2378,12 +2645,14 @@ Story CSS
 .story-area {
   position: relative;
   z-index: 1;
+
   background: {
     position: center center;
     size: cover;
     repeat: no-repeat;
     image: url(assets/img/story-bg.jpg);
   }
+
   &::before {
     left: 0;
     top: 0;
@@ -2395,6 +2664,7 @@ Story CSS
     opacity: 0.7;
   }
 }
+
 .story-content {
   max-width: 520px;
   margin: 0 auto;
@@ -2408,6 +2678,7 @@ Story CSS
       margin-bottom: 35px;
     }
   }
+
   .video-btn {
     display: inline-block;
 
@@ -2439,6 +2710,7 @@ Story CSS
         background: rgba(255, 255, 255, 0.5);
       }
     }
+
     &:hover,
     &:focus {
       i {
@@ -2472,10 +2744,12 @@ Pricing CSS
       border-bottom: 3px solid $main-color;
       display: inline-block;
       transition: $transition;
+
       font: {
         weight: 600;
         size: 14px;
       }
+
       &.active,
       &:hover,
       &:focus {
@@ -2485,6 +2759,7 @@ Pricing CSS
     }
   }
 }
+
 .pricing-table {
   text-align: center;
   padding-bottom: 35px;
@@ -2497,10 +2772,12 @@ Pricing CSS
     transition: $transition;
     position: relative;
     z-index: 1;
+
     font: {
       size: 22px;
       weight: 700;
     }
+
     &::before {
       content: "";
       position: absolute;
@@ -2515,36 +2792,42 @@ Pricing CSS
       visibility: hidden;
     }
   }
+
   .price {
     color: $main-color;
+
     font: {
       size: 40px;
       weight: 700;
     }
+
     margin: {
       top: 25px;
       bottom: 25px;
     }
+
     sup {
       font-size: 20px;
       top: -15px;
       color: $black-color;
     }
   }
+
   .pricing-features {
-    padding: 0;
-    margin: 0 0 35px;
+    padding: 10px 10px 10px 10px;
+    margin: 0 0 3 0px;
     list-style-type: none;
 
     li {
       color: $paragraph-color;
-      margin-bottom: 13px;
+      margin-bottom: 19px;
 
       &:last-child {
         margin-bottom: 0;
       }
     }
   }
+
   &.active,
   &:hover {
     .pricing-header {
@@ -2576,6 +2859,7 @@ Testimonial CSS
     }
   }
 }
+
 .testimonial-item {
   border-right: 3px solid $black-color;
   border-left: 3px solid $black-color;
@@ -2603,17 +2887,20 @@ Testimonial CSS
       display: inline-block !important;
     }
   }
+
   .testimonial-content {
     .client-info {
       margin-top: 20px;
 
       h3 {
         margin-bottom: 0;
+
         font: {
           size: 22px;
           weight: 600;
         }
       }
+
       span {
         display: block;
         color: $main-color;
@@ -2622,16 +2909,18 @@ Testimonial CSS
     }
   }
 }
+
 .testimonial-slides {
   &.owl-theme {
     .owl-nav {
       &.disabled {
-        + .owl-dots {
+        +.owl-dots {
           margin-top: 25px;
           line-height: 0.01;
         }
       }
     }
+
     .owl-dots {
       .owl-dot {
         span {
@@ -2645,12 +2934,14 @@ Testimonial CSS
           border-radius: 50%;
           position: relative;
         }
+
         &:hover {
           span {
             background: $main-color;
             border-color: $main-color;
           }
         }
+
         &.active {
           span {
             background: $main-color;
@@ -2668,6 +2959,7 @@ Call To Action CSS
 .call-to-action {
   position: relative;
   z-index: 1;
+
   background: {
     position: center center;
     size: cover;
@@ -2675,6 +2967,7 @@ Call To Action CSS
     repeat: no-repeat;
     image: url(assets/img/call-to-action-bg.jpg);
   }
+
   &::before {
     left: 0;
     top: 0;
@@ -2686,6 +2979,7 @@ Call To Action CSS
     opacity: 0.7;
   }
 }
+
 .call-to-action-content {
   max-width: 520px;
   margin: 0 auto;
@@ -2697,9 +2991,11 @@ Call To Action CSS
       color: $white-color;
     }
   }
+
   p {
     color: $white-color;
   }
+
   .btn {
     background-color: $white-color;
     margin-top: 25px;
@@ -2719,16 +3015,19 @@ FAQ CSS
 .faq-image {
   width: 100%;
   height: 100%;
+
   background: {
     image: url(assets/img/faq-bg.jpg);
     position: center center;
     size: cover;
     repeat: no-repeat;
   }
+
   img {
     display: none;
   }
 }
+
 .faq-accordion {
   .accordion-item {
     border-radius: 0 !important;
@@ -2747,6 +3046,7 @@ FAQ CSS
       &:first-child {
         border-radius: 0;
       }
+
       .accordion-button {
         display: block;
         overflow: hidden;
@@ -2755,14 +3055,17 @@ FAQ CSS
         box-shadow: unset;
         background: $main-color;
         position: relative;
+
         font: {
           size: $font-size;
           family: $font-family;
           weight: 600;
         }
+
         &:hover {
           background: $main-color;
         }
+
         i {
           position: absolute;
           right: 20px;
@@ -2770,6 +3073,7 @@ FAQ CSS
           font-size: 18px;
           transform: translateY(-50%) rotate(180deg);
         }
+
         &.collapsed {
           color: $black-color;
           background: transparent;
@@ -2779,21 +3083,25 @@ FAQ CSS
             color: $white-color;
             background-color: $main-color;
           }
+
           i {
             transform: translateY(-50%) rotate(0);
           }
         }
+
         &::after {
           display: none;
         }
       }
     }
+
     .accordion-body {
       line-height: 1.8;
       background: transparent;
       color: $paragraph-color;
       padding: 15px;
     }
+
     &:last-child {
       margin-bottom: 0;
     }
@@ -2816,6 +3124,7 @@ Blog CSS
     }
   }
 }
+
 .single-blog-post {
   margin-bottom: 30px;
   background-color: $white-color;
@@ -2832,6 +3141,7 @@ Blog CSS
         transition: $transition;
       }
     }
+
     .post-tag {
       position: absolute;
       left: 0;
@@ -2846,6 +3156,7 @@ Blog CSS
       }
     }
   }
+
   .blog-post-content {
     padding: 25px;
 
@@ -2854,20 +3165,25 @@ Blog CSS
       display: block;
       text-transform: uppercase;
       transition: $transition;
+
       font: {
         size: 14px;
       }
     }
+
     h3 {
       line-height: 30px;
+
       margin: {
         top: 13px;
         bottom: 12px;
       }
+
       font: {
         size: 22px;
         weight: 600;
       }
+
       a {
         color: $black-color;
         display: inline-block;
@@ -2878,10 +3194,12 @@ Blog CSS
         }
       }
     }
+
     p {
       margin-bottom: 18px;
     }
   }
+
   .read-more-btn {
     position: relative;
     font-weight: 500;
@@ -2892,6 +3210,7 @@ Blog CSS
       letter-spacing: 1px;
     }
   }
+
   &:hover,
   &:focus {
     .blog-image {
@@ -2900,6 +3219,7 @@ Blog CSS
           transform: scale(1.2);
         }
       }
+
       .post-tag {
         top: 50px;
 
@@ -2911,16 +3231,18 @@ Blog CSS
     }
   }
 }
+
 .blog-slides {
   &.owl-theme {
     .owl-nav {
       &.disabled {
-        + .owl-dots {
+        +.owl-dots {
           margin-top: 25px;
           line-height: 0.01;
         }
       }
     }
+
     .owl-dots {
       .owl-dot {
         span {
@@ -2934,6 +3256,7 @@ Blog CSS
           border-radius: 50%;
           position: relative;
         }
+
         &:hover,
         &:focus {
           outline: 0;
@@ -2944,6 +3267,7 @@ Blog CSS
             border-color: $main-color;
           }
         }
+
         &.active {
           span {
             background: $main-color;
@@ -2961,6 +3285,7 @@ Partner CSS
 .partner-area {
   background-color: #f7f7f7;
 }
+
 .partner-item {
   background: $white-color;
   text-align: center;
@@ -2978,22 +3303,27 @@ Partner CSS
     visibility: hidden;
     transition: $transition;
   }
+
   &::before {
     left: 0;
     top: 0;
+
     border: {
       left: 3px solid $main-color;
       top: 3px solid $main-color;
     }
   }
+
   &::after {
     right: 0;
     bottom: 0;
+
     border: {
       right: 3px solid $main-color;
       bottom: 3px solid $main-color;
     }
   }
+
   a {
     display: block;
     padding: 25px 15px;
@@ -3004,8 +3334,10 @@ Partner CSS
       transition: $transition;
     }
   }
+
   &:hover,
   &:focus {
+
     &::after,
     &::before {
       width: 40px;
@@ -3013,6 +3345,7 @@ Partner CSS
       opacity: 1;
       visibility: visible;
     }
+
     a {
       img {
         opacity: 0.66;
@@ -3033,6 +3366,7 @@ Subscribe CSS
     repeat: repeat;
   }
 }
+
 .newsletter {
   max-width: 750px;
   text-align: center;
@@ -3040,27 +3374,30 @@ Subscribe CSS
   background: $white-color;
   padding: 35px;
   border-radius: 5px;
+
   margin: {
     left: auto;
     right: auto;
   }
+
   h2 {
     text-transform: capitalize;
     margin-bottom: 30px;
+
     font: {
       size: 35px;
       weight: 500;
     }
+
     b {
       font-weight: 600 !important;
-      background: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0) 80%,
-        $main-color 80%
-      );
+      background: linear-gradient(to bottom,
+          rgba(0, 0, 0, 0) 80%,
+          $main-color 80%);
       background-size: 90px 1.1em !important;
     }
   }
+
   form {
     position: relative;
 
@@ -3071,14 +3408,17 @@ Subscribe CSS
       border-radius: 50px;
       padding-left: 20px;
       color: $black-color;
+
       font: {
         weight: 500;
         size: 16px;
       }
+
       &::placeholder {
         color: $paragraph-color;
       }
     }
+
     button {
       position: absolute;
       right: 7px;
@@ -3092,10 +3432,12 @@ Subscribe CSS
       cursor: pointer;
       transition: $transition;
       color: $white-color;
+
       font: {
         weight: 600;
         size: 16px;
       }
+
       &:hover,
       &:focus {
         background-color: $black-color;
@@ -3121,15 +3463,18 @@ Contact CSS
     }
   }
 }
+
 .contact-info {
   box-shadow: 0 0 30px 0 rgba(67, 67, 67, 0.15);
   background: $white-color;
   padding: 30px;
   height: 100%;
+
   border: {
     top: 3px solid $main-color;
     bottom: 3px solid $main-color;
   }
+
   ul {
     padding: 0;
     margin: 0;
@@ -3145,15 +3490,18 @@ Contact CSS
       &:last-child {
         margin-bottom: 0;
       }
+
       span {
         display: block;
         margin-bottom: 3px;
         color: $black-color;
+
         font: {
           weight: 600;
           size: 20px;
         }
       }
+
       a {
         color: $paragraph-color;
         display: inline-block;
@@ -3163,6 +3511,7 @@ Contact CSS
           color: $main-color;
         }
       }
+
       i {
         position: absolute;
         left: 0;
@@ -3178,6 +3527,7 @@ Contact CSS
         border-radius: 50%;
         transition: $transition;
       }
+
       &:hover,
       &:focus {
         i {
@@ -3188,17 +3538,21 @@ Contact CSS
     }
   }
 }
+
 .contact-form {
   box-shadow: 0 0 30px 0 rgba(67, 67, 67, 0.15);
   background-color: $white-color;
   padding: 30px;
+
   border: {
     top: 3px solid $main-color;
     bottom: 3px solid $main-color;
   }
+
   .btn {
     margin-top: 12px;
   }
+
   textarea.form-control {
     min-height: auto;
     height: auto;
@@ -3212,15 +3566,18 @@ Page Title CSS
   position: relative;
   z-index: 1;
   text-align: center;
+
   background: {
     position: center center;
     size: cover;
     repeat: no-repeat;
   }
+
   padding: {
     top: 200px;
     bottom: 120px;
   }
+
   &::before {
     position: absolute;
     left: 0;
@@ -3231,9 +3588,11 @@ Page Title CSS
     z-index: -1;
     content: "";
   }
+
   h2 {
     margin-bottom: 0;
     color: $white-color;
+
     font: {
       size: 45px;
       weight: 600;
@@ -3265,10 +3624,12 @@ Pagination CSS
         color: $black-color;
         box-shadow: 0 2px 10px 0 #d8dde6;
         border: none;
+
         font: {
           size: 17px;
           weight: 600;
         }
+
         &.active,
         &:hover,
         &:focus {
@@ -3291,13 +3652,16 @@ Sidebar CSS
     &:last-child {
       margin-bottom: 0;
     }
+
     .widget-title {
       margin-bottom: 25px;
       position: relative;
+
       font: {
         size: 22px;
         weight: 600;
       }
+
       &::before {
         content: "";
         position: absolute;
@@ -3310,6 +3674,7 @@ Sidebar CSS
         transition: $transition;
       }
     }
+
     &:hover,
     &:focus {
       .widget-title {
@@ -3318,6 +3683,7 @@ Sidebar CSS
         }
       }
     }
+
     &.widget_search {
       background: $white-color;
       box-shadow: 0px 0px 29px 0px rgba(102, 102, 102, 0.1);
@@ -3329,6 +3695,7 @@ Sidebar CSS
         .form-control {
           background: transparent;
         }
+
         button {
           position: absolute;
           right: 5px;
@@ -3348,6 +3715,7 @@ Sidebar CSS
         }
       }
     }
+
     &.widget_categories {
       ul {
         padding: 0;
@@ -3357,11 +3725,13 @@ Sidebar CSS
         li {
           position: relative;
           border-top: 1px solid #eeeeee;
+
           padding: {
             top: 10px;
             bottom: 10px;
             left: 18px;
           }
+
           &::before {
             content: "";
             position: absolute;
@@ -3373,9 +3743,11 @@ Sidebar CSS
             margin-top: -5px;
             transition: $transition;
           }
+
           &:last-child {
             border-bottom: 1px solid #eeeeee;
           }
+
           a {
             color: $paragraph-color;
             display: inline-block;
@@ -3384,6 +3756,7 @@ Sidebar CSS
               color: $main-color;
             }
           }
+
           &:hover {
             &::before {
               border-radius: 50%;
@@ -3392,6 +3765,7 @@ Sidebar CSS
         }
       }
     }
+
     &.widget_recent_entries {
       ul {
         padding: 0;
@@ -3413,13 +3787,16 @@ Sidebar CSS
               height: 65px;
             }
           }
+
           h5 {
             line-height: 22px;
             margin-bottom: 3px;
+
             font: {
               size: 16px;
               weight: 600;
             }
+
             a {
               color: $black-color;
               display: inline-block;
@@ -3430,15 +3807,18 @@ Sidebar CSS
               }
             }
           }
+
           p {
             font-size: 14px;
           }
+
           &:last-child {
             margin-bottom: 0;
           }
         }
       }
     }
+
     &.widget_tag_cloud {
       .tagcloud {
         a {
@@ -3448,10 +3828,12 @@ Sidebar CSS
           color: $paragraph-color;
           display: inline-block;
           margin-right: 6px;
+
           font: {
             size: 14px !important;
             weight: 600;
           }
+
           &:hover {
             background: $main-color;
             color: $white-color;
@@ -3460,6 +3842,7 @@ Sidebar CSS
         }
       }
     }
+
     &.widget_archive {
       ul {
         padding: 0;
@@ -3469,11 +3852,13 @@ Sidebar CSS
         li {
           position: relative;
           border-top: 1px solid #eeeeee;
+
           padding: {
             top: 10px;
             bottom: 10px;
             left: 18px;
           }
+
           &::before {
             content: "";
             position: absolute;
@@ -3485,9 +3870,11 @@ Sidebar CSS
             margin-top: -5px;
             transition: $transition;
           }
+
           &:last-child {
             border-bottom: 1px solid #eeeeee;
           }
+
           a {
             color: $paragraph-color;
             display: inline-block;
@@ -3496,6 +3883,7 @@ Sidebar CSS
               color: $main-color;
             }
           }
+
           &:hover {
             &::before {
               border-radius: 50%;
@@ -3514,16 +3902,19 @@ Blog Details CSS
   .post-image {
     margin-bottom: 35px;
   }
+
   h3 {
     font: {
       size: 22px;
       weight: 600;
     }
+
     margin: {
       top: 5px;
       bottom: 15px;
     }
   }
+
   .blog-meta {
     ul {
       padding: 0;
@@ -3534,17 +3925,21 @@ Blog Details CSS
         display: inline-block;
         position: relative;
         color: $paragraph-color;
+
         font: {
           size: 14px;
         }
+
         margin: {
           left: 12px;
           right: 12px;
         }
+
         i {
           margin-right: 5px;
           color: $main-color;
         }
+
         &::before {
           width: 1px;
           height: 14px;
@@ -3556,6 +3951,7 @@ Blog Details CSS
           margin-top: -6px;
           transform: rotate(11deg);
         }
+
         a {
           display: inline-block;
           color: $paragraph-color;
@@ -3565,9 +3961,11 @@ Blog Details CSS
             color: $main-color;
           }
         }
+
         &:last-child {
           margin-right: 0;
         }
+
         &:first-child {
           margin-left: 0;
 
@@ -3578,25 +3976,30 @@ Blog Details CSS
       }
     }
   }
+
   p {
     margin: {
       top: 15px;
       bottom: 0;
     }
+
     &:last-child {
       margin-bottom: 0;
     }
   }
+
   blockquote,
   .blockquote {
     background: #f6f6f6 none repeat scroll 0 0;
     padding: 35px 20px 35px 100px;
     position: relative;
     border-left: 5px solid $main-color;
+
     margin: {
       top: 25px;
       bottom: 25px;
     }
+
     &::before {
       font-family: IcoFont !important;
       position: absolute;
@@ -3607,9 +4010,11 @@ Blog Details CSS
       font-size: 55px;
       color: $main-color;
     }
+
     p {
       color: $black-color;
       margin: 0;
+
       font: {
         size: 18px;
         weight: 600;
@@ -3617,13 +4022,16 @@ Blog Details CSS
     }
   }
 }
+
 .post-tag-media {
   background-color: #f5f7fb;
   padding: 20px;
+
   margin: {
     top: 25px;
     bottom: 35px;
   }
+
   ul {
     padding: 0;
     margin: 0;
@@ -3635,10 +4043,12 @@ Blog Details CSS
       span {
         margin-right: 5px;
         display: inline-block;
+
         font: {
           weight: 600;
         }
       }
+
       a {
         color: $paragraph-color;
         margin-right: 4px;
@@ -3650,6 +4060,7 @@ Blog Details CSS
         }
       }
     }
+
     &.social-share {
       text-align: right;
 
@@ -3657,6 +4068,7 @@ Blog Details CSS
         span {
           margin-right: 0;
         }
+
         a {
           margin: {
             right: 0;
@@ -3667,18 +4079,23 @@ Blog Details CSS
     }
   }
 }
+
 .comments-area {
+
   .comments-title,
   .comment-reply-title {
     margin-bottom: 25px;
+
     font: {
       size: 22px;
       weight: 600;
     }
   }
+
   .comment-reply-title {
     margin-bottom: 8px;
   }
+
   ol,
   ul {
     padding: 0;
@@ -3686,6 +4103,7 @@ Blog Details CSS
     list-style-type: none;
 
     li {
+
       ol,
       ul {
         li {
@@ -3696,6 +4114,7 @@ Blog Details CSS
           }
         }
       }
+
       .comment-body {
         background: #f7f7ff;
         padding: 25px 20px;
@@ -3703,10 +4122,12 @@ Blog Details CSS
 
         .comment-meta {
           position: relative;
+
           padding: {
             left: 85px;
             top: 8px;
           }
+
           .comment-author {
             img {
               position: absolute;
@@ -3715,18 +4136,22 @@ Blog Details CSS
               border-radius: 50%;
               max-width: 68px;
             }
+
             .fn {
               margin-bottom: 5px;
               display: block;
+
               font: {
                 size: 16px;
                 weight: 600;
               }
             }
+
             .says {
               display: none;
             }
           }
+
           .comment-metadata {
             a {
               display: inline-block;
@@ -3740,11 +4165,13 @@ Blog Details CSS
             }
           }
         }
+
         .comment-content {
           margin: {
             top: 25px;
           }
         }
+
         .reply {
           position: absolute;
           right: 30px;
@@ -3765,6 +4192,7 @@ Blog Details CSS
       }
     }
   }
+
   .comment-respond {
     margin-top: 30px;
 
@@ -3772,10 +4200,12 @@ Blog Details CSS
       font-size: 14px;
       margin-bottom: 20px;
     }
+
     .comment-form-comment,
     .comment-form-author,
     .comment-form-email,
     .comment-form-url {
+
       input,
       textarea {
         display: block;
@@ -3792,10 +4222,12 @@ Blog Details CSS
           border-color: $main-color;
         }
       }
+
       textarea {
         height: auto;
       }
     }
+
     .form-submit {
       input {
         display: inline-block;
@@ -3841,6 +4273,7 @@ Blog Details CSS
       font-weight: 600;
       border: 1px solid #eeeeee;
     }
+
     .search-submit {
       position: absolute;
       right: 0;
@@ -3869,19 +4302,24 @@ Footer CSS
 =================================================*/
 .footer-area {
   background-color: $black-color;
+
   padding: {
     top: 30px;
     bottom: 30px;
   }
+
   p {
     color: $white-color;
+
     font: {
       family: $font-family2;
       weight: 500;
     }
+
     .icofont-heart {
       color: red;
     }
+
     a {
       display: inline-block;
       color: $white-color;
@@ -3893,6 +4331,7 @@ Footer CSS
       }
     }
   }
+
   ul {
     text-align: right;
     padding: 0;
@@ -3975,24 +4414,29 @@ Sidebar Eaxmple Demo CSS
     cursor: pointer;
     text-transform: uppercase;
     border-radius: 5px 0 0 5px;
+
     font: {
       weight: 600;
       size: 13px;
     }
+
     span {
       writing-mode: vertical-rl;
       text-orientation: upright;
+
       padding: {
         left: 5px;
         right: 5px;
       }
     }
+
     &:hover {
       color: $white-color;
       background-color: $black-color;
     }
   }
 }
+
 .example-demo-modal {
   position: fixed;
   overflow: hidden;
@@ -4019,19 +4463,23 @@ Sidebar Eaxmple Demo CSS
       padding-left: 0;
       margin-bottom: 0;
       list-style-type: none;
+
       margin: {
         left: -10px;
         right: -10px;
         bottom: -20px;
       }
+
       li {
         flex: 0 0 50%;
         max-width: 50%;
+
         padding: {
           left: 10px;
           right: 10px;
           bottom: 20px;
         }
+
         .single-demo {
           position: relative;
           text-align: center;
@@ -4042,6 +4490,7 @@ Sidebar Eaxmple Demo CSS
             box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
             border: 5px solid $white-color;
           }
+
           &::before {
             content: "";
             position: absolute;
@@ -4055,6 +4504,7 @@ Sidebar Eaxmple Demo CSS
             visibility: hidden;
             border-radius: 5px;
           }
+
           span {
             position: absolute;
             left: 0;
@@ -4068,11 +4518,13 @@ Sidebar Eaxmple Demo CSS
             opacity: 0;
             visibility: hidden;
             margin-top: 15px;
+
             font: {
               size: 16px;
               weight: 600;
             }
           }
+
           .link-btn {
             position: absolute;
             left: 0;
@@ -4082,11 +4534,13 @@ Sidebar Eaxmple Demo CSS
             display: block;
             z-index: 3;
           }
+
           &:hover {
             &::before {
               opacity: 1;
               visibility: visible;
             }
+
             span {
               opacity: 1;
               visibility: visible;
@@ -4097,6 +4551,7 @@ Sidebar Eaxmple Demo CSS
       }
     }
   }
+
   .header-title {
     position: absolute;
     background-color: $white-color;
@@ -4105,12 +4560,14 @@ Sidebar Eaxmple Demo CSS
     right: 0;
     z-index: 5;
     border-bottom: 1px solid #eeeeee;
+
     padding: {
       top: 18px;
       bottom: 15px;
       left: 30px;
       right: 30px;
     }
+
     .example-demo-modal-control {
       position: absolute;
       right: 25px;
@@ -4127,15 +4584,18 @@ Sidebar Eaxmple Demo CSS
         color: $main-color;
       }
     }
+
     .title {
       color: $black-color;
       margin-bottom: 0;
+
       font: {
         size: 18px;
         weight: 600;
       }
     }
   }
+
   &.active {
     right: 0;
     opacity: 1;

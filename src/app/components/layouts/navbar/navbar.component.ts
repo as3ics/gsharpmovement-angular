@@ -5,20 +5,30 @@ import { ViewportScroller } from "@angular/common";
 import * as $ from "jquery";
 import { delay } from "rxjs/operators";
 
+export const PLAY_BUTTON_LS = "LOCAL_STORAGE_PLAY_BUTTON";
+
+export enum PlayButtonValues {
+  PLAYING = "playing",
+  STOPPED = "stopped",
+  UNSET = ""
+}
+
 @Component({
   selector: "app-navbar",
   templateUrl: "./navbar.component.html",
   styleUrls: ["./navbar.component.scss"],
 })
 export class NavbarComponent implements OnInit {
-  constructor(private viewportScroller: ViewportScroller) {}
+  constructor(private viewportScroller: ViewportScroller) { }
 
   ngOnInit() {
     this.init();
   }
 
   async init() {
-    this.stopAudio();
+
+    $("#mute-navbar").css("display", "none");
+    $("#play-navbar").css("display", "block");
 
     await delay(1200);
 
@@ -34,6 +44,17 @@ export class NavbarComponent implements OnInit {
     $("#mute2-button").on("click", () => {
       this.stopAudio();
     });
+
+    let prevPlay = localStorage.getItem(PLAY_BUTTON_LS);
+    if (prevPlay == PlayButtonValues.UNSET) {
+      this.played = false;
+    } else if (prevPlay == PlayButtonValues.STOPPED) {
+      this.played = true;
+    } else if (prevPlay == PlayButtonValues.PLAYING) {
+      this.played = false;
+    }
+
+    console.log("PrevPlay: " + prevPlay);
   }
 
   muteButton: ElementRef;
@@ -62,11 +83,19 @@ export class NavbarComponent implements OnInit {
     this.audio.load();
     try {
       await this.audio.play();
-    } catch (err) {}
+      localStorage.setItem(PLAY_BUTTON_LS, PlayButtonValues.PLAYING);
+    } catch (err) {
+
+    }
   }
 
   async stop() {
-    await this.audio.pause();
+    try {
+      await this.audio.pause();
+      localStorage.setItem(PLAY_BUTTON_LS, PlayButtonValues.STOPPED);
+    } catch (err) {
+
+    }
   }
 
   played = false;
