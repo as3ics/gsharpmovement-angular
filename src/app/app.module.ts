@@ -58,6 +58,9 @@ import { DemoSidebarComponent } from "./components/layouts/demo-sidebar/demo-sid
 import { FormsModule } from "@angular/forms";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { ToastrModule } from "ngx-toastr";
+import { HttpClientModule } from '@angular/common/http';
+import { DownloadService } from "./services/downloads.service";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -117,8 +120,9 @@ import { ToastrModule } from "ngx-toastr";
     FormsModule,
     ToastrModule.forRoot({}),
     BrowserAnimationsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [DownloadService],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

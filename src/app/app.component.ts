@@ -13,6 +13,8 @@ import {
   PathLocationStrategy,
 } from "@angular/common";
 import { filter } from "rxjs/operators";
+import { DownloadService } from './services/downloads.service';
+
 declare let $: any;
 
 @Component({
@@ -31,10 +33,11 @@ export class AppComponent implements OnInit {
   location: any;
   routerSubscription: any;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private downloadService: DownloadService) { }
 
   ngOnInit() {
     this.recallJsFuntions();
+    this.downloadService.init();
   }
 
   recallJsFuntions() {
