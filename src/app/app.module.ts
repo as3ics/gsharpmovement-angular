@@ -56,7 +56,8 @@ import { ErrorComponent } from "./components/pages/error/error.component";
 import { DemoSidebarComponent } from "./components/layouts/demo-sidebar/demo-sidebar.component";
 
 import { FormsModule } from "@angular/forms";
-
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { ToastrModule } from "ngx-toastr";
 @NgModule({
   declarations: [
     AppComponent,
@@ -110,7 +111,13 @@ import { FormsModule } from "@angular/forms";
     ErrorComponent,
     DemoSidebarComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    ToastrModule.forRoot({}),
+    BrowserAnimationsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

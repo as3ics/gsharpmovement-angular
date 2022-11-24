@@ -1,17 +1,24 @@
 /** @format */
 
-import { Component, ElementRef, HostListener, OnInit } from "@angular/core";
+import {
+  Component,
+  ElementRef,
+  EventEmitter,
+  HostListener,
+  OnInit,
+  Output,
+} from "@angular/core";
 import { ViewportScroller } from "@angular/common";
 import * as $ from "jquery";
 import { delay } from "rxjs/operators";
-import { Router } from "@angular/router";
+import { ToastrService } from "ngx-toastr";
 
 export const PLAY_BUTTON_LS = "LOCAL_STORAGE_PLAY_BUTTON";
 
 export enum PlayButtonValues {
   PLAYING = "playing",
   STOPPED = "stopped",
-  UNSET = ""
+  UNSET = "",
 }
 
 @Component({
@@ -20,30 +27,39 @@ export enum PlayButtonValues {
   styleUrls: ["./navbar.component.scss"],
 })
 export class NavbarComponent implements OnInit {
-  constructor(private viewportScroller: ViewportScroller, private router: Router) { }
+  @Output() song: EventEmitter<string> = new EventEmitter();
+
+  constructor(
+    private viewportScroller: ViewportScroller,
+    private toastr: ToastrService
+  ) {}
 
   ngOnInit() {
     this.init();
   }
 
   async init() {
-
     $("#mute-navbar").css("display", "none");
     $("#play-navbar").css("display", "block");
 
     await delay(1200);
 
     $("#play-button").on("click", () => {
-      this.startAudio();
+      this.startAudio(
+        "assets/album/01.mp3",
+        "01. Life is a Journey (feat. Thiago Alves)"
+      );
     });
     $("#play2-button").on("click", () => {
       this.startAudio();
     });
     $("#mute-button").on("click", () => {
       this.stopAudio();
+      NavbarComponent.stop();
     });
     $("#mute2-button").on("click", () => {
       this.stopAudio();
+      NavbarComponent.stop();
     });
 
     let prevPlay = localStorage.getItem(PLAY_BUTTON_LS);
@@ -58,8 +74,6 @@ export class NavbarComponent implements OnInit {
     console.log("PrevPlay: " + prevPlay);
   }
 
-  muteButton: ElementRef;
-
   public onClick(elementId: string): void {
     this.viewportScroller.scrollToAnchor(elementId);
   }
@@ -68,35 +82,35 @@ export class NavbarComponent implements OnInit {
     console.log("Stop Audio");
     $("#mute-navbar").css("display", "none");
     $("#play-navbar").css("display", "block");
-    await this.stop();
+    await NavbarComponent.stop();
+    this.toastr.error("", "Media Playback Halted");
   }
 
-  async startAudio() {
+  async startAudio(
+    source: string = "assets/album/01.mp3",
+    label: string = "01. Life is a Journey (feat. Thiago Alves)"
+  ) {
     console.log("Start Audio");
     $("#play-navbar").css("display", "none");
     $("#mute-navbar").css("display", "block");
-    await this.play();
+    await NavbarComponent.play(source);
+    this.toastr.info(label, "Now Playing");
   }
 
-  audio = new Audio();
-  async play() {
-    this.audio.src = "assets/album/01.mp3";
-    this.audio.load();
+  async play(source: string = "assets/album/01.mp3") {
+    NavbarComponent.audio.src = source;
+    NavbarComponent.audio.load();
     try {
-      await this.audio.play();
+      await NavbarComponent.audio.play();
       localStorage.setItem(PLAY_BUTTON_LS, PlayButtonValues.PLAYING);
-    } catch (err) {
-
-    }
+    } catch (err) {}
   }
 
   async stop() {
     try {
-      await this.audio.pause();
+      await NavbarComponent.audio.pause();
       localStorage.setItem(PLAY_BUTTON_LS, PlayButtonValues.STOPPED);
-    } catch (err) {
-
-    }
+    } catch (err) {}
   }
 
   played = false;
@@ -104,12 +118,39 @@ export class NavbarComponent implements OnInit {
   onScroll(event) {
     if (!this.played) {
       this.played = true;
-      this.startAudio();
+      this.startAudio(
+        "assets/album/01.mp3",
+        "01. Life is a Journey (feat. Thiago Alves)"
+      );
       console.log("Played");
     }
   }
 
   reload() {
     window.location.reload();
+  }
+
+  static audio = new Audio();
+  static async play(
+    source: string = "assets/album/01.mp3",
+    label: string = "Song"
+  ) {
+    $("#play-navbar").css("display", "none");
+    $("#mute-navbar").css("display", "block");
+    NavbarComponent.audio.src = source;
+    NavbarComponent.audio.load();
+    try {
+      await this.audio.play();
+      localStorage.setItem(PLAY_BUTTON_LS, PlayButtonValues.PLAYING);
+    } catch (err) {}
+  }
+
+  static async stop() {
+    $("#mute-navbar").css("display", "none");
+    $("#play-navbar").css("display", "block");
+    try {
+      await this.audio.pause();
+      localStorage.setItem(PLAY_BUTTON_LS, PlayButtonValues.STOPPED);
+    } catch (err) {}
   }
 }

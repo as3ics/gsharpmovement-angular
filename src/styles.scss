@@ -339,7 +339,7 @@ Navbar CSS
     z-index: 999;
     box-shadow: 0px 0px 18px 1px rgba(0, 0, 0, 0.1);
     background-color: $white-color !important;
-    animation: 500ms ease-in-out 0s normal none 0.5 running fade;
+    animation: 500ms ease-in-out 0s normal none 0.5 running fadeInOut;
   }
 }
 
@@ -551,6 +551,7 @@ Navbar CSS
 
   .navbar-expand-lg {
     > .container {
+      height: 100px; // Modified mobile navbar height when sticky
       padding: {
         left: 15px;
         right: 15px;

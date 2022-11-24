@@ -4,10 +4,10 @@
   <div class="container">
     <div class="section-title">
       <span>What we have</span>
-      <h2>Songs for any <b>Playlist</b></h2>
+      <h2>New hit songs, ready for your next new <b>Playlist</b></h2>
       <p>
-        Here are some songs of ours we think you'll enjoy from the very first
-        beat.
+        Handpicked, here are some of our latest musical creations that we know
+        you'll be bouncing to from the very first beat.
       </p>
     </div>
     <div class="row">
@@ -15,16 +15,27 @@
         <div class="single-services">
           <div class="services-image">
             <img src="assets/album/cover.png" alt="image" />
-            <div class="icon">
+            <div
+              class="icon"
+              (click)="
+                play(
+                  'assets/album/01.mp3',
+                  '01. Life is a Journey (feat. Thiago Alves)'
+                )
+              "
+            >
               <i class="icofont-headphone-alt-3"></i>
             </div>
           </div>
           <div class="services-content">
             <h3>01. Life is a Journey</h3>
             <p>
-              Samuel P Lauzon, Thiago Alves, & Gadfly introduce you to G#
-              Movement with this wonderful mandolin piece mixed with a Grateful
-              Dead sounding guitar overlay from Samuel.
+              Samuel P Lauzon, Thiago Alves, & Gadfly come together to introduce
+              the world to the unique sound of G# Movement with this wonderful
+              short piece composition that combines a folky Mandolin with the
+              sound from the Grateful Dead. Songs like these are what G#
+              Movement truly specializing in. A song with a sound truly like no
+              other.
             </p>
           </div>
         </div>
@@ -33,15 +44,25 @@
         <div class="single-services">
           <div class="services-image">
             <img src="assets/album/cover.png" alt="image" />
-            <div class="icon">
+            <div
+              class="icon"
+              (click)="
+                play(
+                  'assets/album/02.mp3',
+                  '02. Crash (And Burn) [feat. Samuel P Lauzon'
+                )
+              "
+            >
               <i class="icofont-headphone-alt-3"></i>
             </div>
           </div>
           <div class="services-content">
             <h3>02. Crash (And Burn)</h3>
             <p>
-              Samuel P Lauzon, Thiago Alves, & Gadfly team up again to lay down
-              a new up-tempo rendition of a Dave Matthews classic.
+              Samuel P Lauzon, Thiago Alves, & Gadfly team up again on this
+              track to present the listeners with a new and original
+              interpretation of the popular, classic, & iconic Dave Matthews
+              Band song "Crash Into Me".
             </p>
           </div>
         </div>
@@ -50,16 +71,25 @@
         <div class="single-services">
           <div class="services-image">
             <img src="assets/album/cover.png" alt="image" />
-            <div class="icon">
+            <div
+              class="icon"
+              (click)="play('assets/album/03.mp3', '03. Live Love (Live)')"
+            >
               <i class="icofont-headphone-alt-3"></i>
             </div>
           </div>
           <div class="services-content">
             <h3>03. Live Love (Live)</h3>
             <p>
-              This song was only ever performed live once, with Gadfly and an
-              anonymous percussionist, but it was caught on tape. Not bad for
-              only 15 seconds of warm-up.
+              Live Love (Live) is a very catchy original improvosational peice
+              performed live by Gadfly and a fellow anonymous G# Movement
+              contributor. This song has only ever been actually performed a
+              single time, but it was luckily captured on a decent iPhone
+              recording that managed to make it to the final album release.
+              Everything in this one works together to bring you into an
+              original and classic jam-band smash. It may have only been
+              performed once, but this song will be enjoyed by all for many
+              years to come.
             </p>
           </div>
         </div>
@@ -68,17 +98,31 @@
         <div class="single-services">
           <div class="services-image">
             <img src="assets/album/cover.png" alt="image" />
-            <div class="icon">
+            <div
+              class="icon"
+              (click)="
+                play(
+                  'assets/album/06.mp3',
+                  '06. From Your Hand To Mine (Instrumental)'
+                )
+              "
+            >
               <i class="icofont-headphone-alt-3"></i>
             </div>
           </div>
           <div class="services-content">
             <h3>06. From Your Hand To Mine (Instrumental)</h3>
             <p>
-              This was one of Gadfly's most inspiring peices, with multiple
-              great versions from talented collaborators across BandLab. This is
-              the original original version, which still can not be duplicated
-              to this day.
+              This track has been singularly Gadfly's most inspiring project
+              while collaborating, with contributions from multiple great and
+              talented artists all across BandLab. This is the original original
+              version, which has qualities that I still can not be replicate to
+              this day. An EP of all the different versions of the song inspired
+              by this original track is not only possible, but likely warranted
+              at some point in my career. The song is originally influenced by
+              the Explosions in the Sky song "Your Hand in Mine", which I was
+              inspired to play around with after attending the band live in
+              concert in beautiful Luxembourgh City.
             </p>
           </div>
         </div>
@@ -87,17 +131,32 @@
         <div class="single-services">
           <div class="services-image">
             <img src="assets/album/cover.png" alt="image" />
-            <div class="icon">
+            <div
+              class="icon"
+              (click)="
+                play(
+                  'assets/album/09.mp3',
+                  '09. Every Day\'s Not Same (feat. Tobi Wats)'
+                )
+              "
+            >
               <i class="icofont-headphone-alt-3"></i>
             </div>
           </div>
           <div class="services-content">
             <h3>09. Every Day's Not Same</h3>
             <p>
-              It still amazes me that this song blossomed from such an
-              originally short and tepid base track, but this song is a gem and
-              truly stands for everything I stand for. Thank you to all the
-              collaborators.
+              The evolution of this song still amazes me to this day, especially
+              the fact that this song blossomed from an originally rather short
+              and brisk original base track, which was of me on acoustic guitar,
+              but this song is hands down one of my greatest prides as a
+              musician, and with the amazing songwriting contributions of Tobi
+              Wats I can honestly say that this song stands for everything that
+              I personally stand for. Thank you to all the collaborators that
+              worked together to create this gem, especially the gifted keyboard
+              and computer contributions of Domenick DeGeorge & Tobi Wats for
+              creating the foundation of what has matured into an all-time great
+              song.
             </p>
           </div>
         </div>
@@ -106,17 +165,33 @@
         <div class="single-services">
           <div class="services-image">
             <img src="assets/album/cover.png" alt="image" />
-            <div class="icon">
+            <div
+              class="icon"
+              (click)="
+                play(
+                  'assets/album/10.mp3',
+                  '10. Gonna Shake (feat. Doug Cowan)'
+                )
+              "
+            >
               <i class="icofont-headphone-alt-3"></i>
             </div>
           </div>
           <div class="services-content">
             <h3>10. Gonna Shake</h3>
             <p>
-              This easily might be the best song we have. Doug did an amazing
-              original instant classic vocal rendition for this production and
-              it is fire 🔥🔥🔥 !!! Please enjoy in a car with the windows down
-              and the volume up, preferably on the high way.
+              Gonna Shake, with the original vocal contributions and songwriting
+              contributions of Doug Cowan could easily be the best song G#
+              Movement has ever been a part of. G# Movement has aquired quite
+              the handful of poppy & catchy tunes, but clearly this song is
+              something special, and stands out among the rest. A lock for top
+              original, the vocals for this production are straight up fire
+              🔥🔥🔥 and could easily burn down a small unattended building!
+              Please enjoy, and do it loudly, perforably in a convertable, with
+              the windows down, the volume up, while weaving in and out of lanes
+              on the highway. If there was one G# Movement song that you had to
+              place a bet on I would inevitably have to wager on this track to
+              take it the extra mile.
             </p>
           </div>
         </div>
