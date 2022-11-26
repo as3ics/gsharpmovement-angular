@@ -54,12 +54,16 @@ import { BlogTwoComponent } from "./components/pages/blog-two/blog-two.component
 import { BlogDetailsComponent } from "./components/pages/blog-details/blog-details.component";
 import { ErrorComponent } from "./components/pages/error/error.component";
 import { DemoSidebarComponent } from "./components/layouts/demo-sidebar/demo-sidebar.component";
+import { WhoWeAreCloneComponent } from "./components/layouts/who-we-are-clone/who-we-are.component";
 
 import { FormsModule } from "@angular/forms";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { ToastrModule } from "ngx-toastr";
 import { HttpClientModule } from '@angular/common/http';
 import { DownloadService } from "./services/downloads.service";
+import { ShareButtonsModule } from 'ngx-sharebuttons/buttons';
+import { ShareIconsModule } from 'ngx-sharebuttons/icons';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -113,6 +117,7 @@ import { DownloadService } from "./services/downloads.service";
     BlogDetailsComponent,
     ErrorComponent,
     DemoSidebarComponent,
+    WhoWeAreCloneComponent
   ],
   imports: [
     BrowserModule,
@@ -120,7 +125,10 @@ import { DownloadService } from "./services/downloads.service";
     FormsModule,
     ToastrModule.forRoot({}),
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    ShareButtonsModule,
+    ShareIconsModule,
+    FontAwesomeModule
   ],
   providers: [DownloadService],
   bootstrap: [AppComponent],
