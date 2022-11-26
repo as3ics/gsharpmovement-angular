@@ -6,7 +6,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "avurn-ng": {
+    "weshallprevail": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/weshallprevail",
+            "outputPath": "dist/weshallprevail/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -98,18 +98,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "avurn-ng:build"
+            "browserTarget": "weshallprevail:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "avurn-ng:build:production"
+              "browserTarget": "weshallprevail:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "avurn-ng:build"
+            "browserTarget": "weshallprevail:build"
           }
         },
         "test": {
@@ -133,16 +133,77 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "avurn-ng:serve"
+            "devServerTarget": "weshallprevail:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "avurn-ng:serve:production"
+              "devServerTarget": "weshallprevail:serve:production"
             }
           }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/weshallprevail/server",
+            "main": "server.ts",
+            "tsConfig": "tsconfig.server.json",
+            "optimization": false,
+            "sourceMap": true,
+            "extractLicenses": false
+          },
+          "configurations": {
+            "production": {
+              "outputHashing": "media",
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "sourceMap": false,
+              "extractLicenses": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve-ssr": {
+          "builder": "@nguniversal/builders:ssr-dev-server",
+          "configurations": {
+            "development": {
+              "browserTarget": "weshallprevail:build:development",
+              "serverTarget": "weshallprevail:server:development"
+            },
+            "production": {
+              "browserTarget": "weshallprevail:build:production",
+              "serverTarget": "weshallprevail:server:production"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "prerender": {
+          "builder": "@nguniversal/builders:prerender",
+          "options": {
+            "browserTarget": "weshallprevail:build:production",
+            "serverTarget": "weshallprevail:server:production",
+            "routes": [
+              "/"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "weshallprevail:build:production",
+              "serverTarget": "weshallprevail:server:production"
+            },
+            "development": {
+              "browserTarget": "weshallprevail:build:development",
+              "serverTarget": "weshallprevail:server:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }
   },
-  "defaultProject": "avurn-ng"
+  "defaultProject": "weshallprevail"
 }

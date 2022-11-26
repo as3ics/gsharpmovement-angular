@@ -1,13 +1,17 @@
 {
   "name": "weshallprevail",
-  "version": "1.1.3",
+  "version": "1.2.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build --configuration production",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "dev:ssr": "ng run weshallprevail:serve-ssr",
+    "serve:ssr": "node dist/weshallprevail/server/main.js",
+    "build:ssr": "ng build && ng run weshallprevail:server",
+    "prerender": "ng run weshallprevail:prerender"
   },
   "private": true,
   "dependencies": {
@@ -20,6 +24,7 @@
     "@angular/material": "^15.0.0",
     "@angular/platform-browser": "~13.0.1",
     "@angular/platform-browser-dynamic": "~13.0.1",
+    "@angular/platform-server": "~13.0.1",
     "@angular/router": "~13.0.1",
     "@babel/runtime-corejs2": "^7.9.6",
     "@fortawesome/angular-fontawesome": "^0.10.0",
@@ -27,7 +32,9 @@
     "@fortawesome/free-brands-svg-icons": "^6.2.0",
     "@fortawesome/free-regular-svg-icons": "^6.2.0",
     "@fortawesome/free-solid-svg-icons": "^6.2.0",
+    "@nguniversal/express-engine": "^13.1.1",
     "bootstrap": "^5.1.3",
+    "express": "^4.15.2",
     "jquery": "^3.6.1",
     "ngx-google-analytics": "^13.0.1",
     "ngx-owl-carousel": "^2.0.7",
@@ -43,6 +50,8 @@
     "@angular/cli": "~13.0.2",
     "@angular/compiler-cli": "~13.0.1",
     "@angular/language-service": "~13.0.1",
+    "@nguniversal/builders": "^13.1.1",
+    "@types/express": "^4.17.0",
     "@types/jasmine": "~3.6.0",
     "@types/jasminewd2": "~2.0.3",
     "@types/jquery": "^3.5.14",

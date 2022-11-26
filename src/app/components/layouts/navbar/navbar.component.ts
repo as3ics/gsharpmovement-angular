@@ -5,6 +5,7 @@ import {
   ElementRef,
   EventEmitter,
   HostListener,
+  Inject,
   OnInit,
   Output,
 } from "@angular/core";
@@ -12,6 +13,8 @@ import { ViewportScroller } from "@angular/common";
 import * as $ from "jquery";
 import { delay } from "rxjs/operators";
 import { ToastrService } from "ngx-toastr";
+import { PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 
 export const PLAY_BUTTON_LS = "LOCAL_STORAGE_PLAY_BUTTON";
 
@@ -29,13 +32,22 @@ export enum PlayButtonValues {
 export class NavbarComponent implements OnInit {
   @Output() song: EventEmitter<string> = new EventEmitter();
 
+
+  private isBrowser: boolean;
+
   constructor(
     private viewportScroller: ViewportScroller,
-    private toastr: ToastrService
-  ) { }
+    private toastr: ToastrService,
+    @Inject(PLATFORM_ID) platformId: Object
+  ) {
+    this.isBrowser = isPlatformBrowser(platformId);
+  }
 
   ngOnInit() {
-    this.init();
+    if (this.isBrowser) {
+      NavbarComponent.audio = new Audio();
+      this.init();
+    }
   }
 
   async init() {
@@ -62,16 +74,18 @@ export class NavbarComponent implements OnInit {
       NavbarComponent.stop();
     });
 
-    let prevPlay = localStorage.getItem(PLAY_BUTTON_LS);
-    if (prevPlay == PlayButtonValues.UNSET) {
-      this.played = false;
-    } else if (prevPlay == PlayButtonValues.STOPPED) {
-      this.played = true;
-    } else if (prevPlay == PlayButtonValues.PLAYING) {
-      this.played = false;
-    }
+    if (this.isBrowser) {
+      let prevPlay = localStorage.getItem(PLAY_BUTTON_LS);
+      if (prevPlay == PlayButtonValues.UNSET) {
+        this.played = false;
+      } else if (prevPlay == PlayButtonValues.STOPPED) {
+        this.played = true;
+      } else if (prevPlay == PlayButtonValues.PLAYING) {
+        this.played = false;
+      }
 
-    console.log("PrevPlay: " + prevPlay);
+      console.log("PrevPlay: " + prevPlay);
+    }
   }
 
   public onClick(elementId: string): void {
@@ -102,14 +116,14 @@ export class NavbarComponent implements OnInit {
     NavbarComponent.audio.load();
     try {
       await NavbarComponent.audio.play();
-      localStorage.setItem(PLAY_BUTTON_LS, PlayButtonValues.PLAYING);
+      if (this.isBrowser) localStorage.setItem(PLAY_BUTTON_LS, PlayButtonValues.PLAYING);
     } catch (err) { }
   }
 
   async stop() {
     try {
       await NavbarComponent.audio.pause();
-      localStorage.setItem(PLAY_BUTTON_LS, PlayButtonValues.STOPPED);
+      if (this.isBrowser) localStorage.setItem(PLAY_BUTTON_LS, PlayButtonValues.STOPPED);
     } catch (err) { }
   }
 
@@ -130,7 +144,7 @@ export class NavbarComponent implements OnInit {
     window.location.reload();
   }
 
-  static audio = new Audio();
+  static audio;
   static async play(
     source: string = "assets/album/01.mp3",
     label: string = "Song"
@@ -141,7 +155,7 @@ export class NavbarComponent implements OnInit {
     NavbarComponent.audio.load();
     try {
       await this.audio.play();
-      localStorage.setItem(PLAY_BUTTON_LS, PlayButtonValues.PLAYING);
+      // localStorage.setItem(PLAY_BUTTON_LS, PlayButtonValues.PLAYING);
     } catch (err) { }
   }
 
@@ -150,7 +164,7 @@ export class NavbarComponent implements OnInit {
     $("#play-navbar").css("display", "block");
     try {
       await this.audio.pause();
-      localStorage.setItem(PLAY_BUTTON_LS, PlayButtonValues.STOPPED);
+      // localStorage.setItem(PLAY_BUTTON_LS, PlayButtonValues.STOPPED);
     } catch (err) { }
   }
 }

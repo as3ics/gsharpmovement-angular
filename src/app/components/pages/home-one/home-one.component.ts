@@ -3,6 +3,7 @@
 import { Component, OnInit } from "@angular/core";
 import { DownloadService } from "src/app/services/downloads.service";
 import { environment } from "src/environments/environment";
+import { Meta, Title } from "@angular/platform-browser";
 
 @Component({
   selector: "app-home-one",
@@ -13,7 +14,17 @@ export class HomeOneComponent implements OnInit {
 
   buttonText: string = environment.downloadButtonText;
 
-  constructor(private downloadService: DownloadService) { }
+  constructor(private downloadService: DownloadService, private meta: Meta, private title: Title) {
+    this.title.setTitle("Free Album Giveaway of Gadfly & G# Movement's We Shall Prevail(2022 Remaster)");
+    this.meta.addTags([
+      { name: "description", content: "The home of Gadfly & G# Movement where they are giving away their new indie folk-rock album for free." },
+      { name: "author", content: "Zach DeGeorge" },
+      { name: "keywordsb", content: "Gadfly, G# Movement, indie, music, folk-rock, We Shall Prevail, Zach DeGeorge, Zachary DeGeorge, Samuel P Lauzon, Tobi Wats, Thiago Alves, Matt Mooney, Chase Holton, Doug Cowan, Timmy Jay, Domenick DeGeorge, The Usual Stoopkid, new music, free music" },
+      { name: "robots", content: "index, follow" },
+      { charset: "UTF-8" },
+      { name: "date", content: "2022-11-26", scheme: "YYYY-MM-DD" }
+    ])
+  }
 
   ngOnInit() { }
 

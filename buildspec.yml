@@ -10,12 +10,13 @@ phases:
   pre_build:
     commands:
       - echo Entered the pre_build phase...
+      - npm i -g meteor
       - npm ci
   build:
     commands:
       - echo Entered the build phase...
       - echo Build started on `date`
-      - npm run build
+      - npm run build:ssr
   post_build:
     commands:
       - echo Entered the post_build phase...

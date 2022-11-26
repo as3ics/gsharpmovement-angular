@@ -122,7 +122,7 @@ import { NgxGoogleAnalyticsModule, NgxGoogleAnalyticsRouterModule } from 'ngx-go
     WhoWeAreCloneComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     FormsModule,
     ToastrModule.forRoot({ closeButton: true, maxOpened: 1, autoDismiss: true, tapToDismiss: true }),
