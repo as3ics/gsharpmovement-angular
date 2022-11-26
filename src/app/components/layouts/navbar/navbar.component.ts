@@ -83,7 +83,7 @@ export class NavbarComponent implements OnInit {
     $("#mute-navbar").css("display", "none");
     $("#play-navbar").css("display", "block");
     await NavbarComponent.stop();
-    this.toastr.show("Support the Movement; Sharing is Caring.", "Playback Playback Halted");
+    this.toastr.show("Support the Movement; Sharing is Caring.", "Media Playback Halted");
   }
 
   async startAudio(
@@ -114,17 +114,17 @@ export class NavbarComponent implements OnInit {
   }
 
   played = false;
-  @HostListener("window:scroll", ["$event"])
-  onScroll(event) {
-    if (!this.played) {
-      this.played = true;
-      this.startAudio(
-        "assets/album/01.mp3",
-        "01. Life is a Journey (feat. Thiago Alves)"
-      );
-      console.log("Played");
-    }
-  }
+  // @HostListener("window:scroll", ["$event"])
+  // onScroll(event) {
+  //   if (!this.played) {
+  //     this.played = true;
+  //     this.startAudio(
+  //       "assets/album/01.mp3",
+  //       "01. Life is a Journey (feat. Thiago Alves)"
+  //     );
+  //     console.log("Played");
+  //   }
+  // }
 
   reload() {
     window.location.reload();
