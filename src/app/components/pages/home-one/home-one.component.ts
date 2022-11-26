@@ -23,7 +23,11 @@ export class HomeOneComponent implements OnInit {
       { name: "robots", content: "index, follow" },
       { charset: "UTF-8" },
       { name: "date", content: "2022-11-26", scheme: "YYYY-MM-DD" },
-      { name: "msvalidate.01", content: "A3AF8306380177A005ED45495E44FF9F" }
+      { name: "msvalidate.01", content: "A3AF8306380177A005ED45495E44FF9F" },
+      { name: "og:title", content: "Free Album Giveaway" },
+      { name: "og:description", content: "We just launched our new website and to celebrate we are giving away our album. Get your free copy only on the website." },
+      { name: "og:image", content: "assets/album/cover.jpg" },
+      { name: "og:url", content: "https://gsharpmovement.com/" }
     ])
   }
 
