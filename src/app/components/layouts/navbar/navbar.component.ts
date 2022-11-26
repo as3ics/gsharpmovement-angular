@@ -97,7 +97,7 @@ export class NavbarComponent implements OnInit {
     $("#mute-navbar").css("display", "none");
     $("#play-navbar").css("display", "block");
     await NavbarComponent.stop();
-    this.toastr.show("Support the Movement; Sharing is Caring.", "Media Playback Halted");
+    this.toastr.show("Support G# Movement; Sharing is Caring.", "Media Playback Halted");
   }
 
   async startAudio(
