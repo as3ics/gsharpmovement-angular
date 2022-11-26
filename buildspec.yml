@@ -15,7 +15,7 @@ phases:
     commands:
       - echo Entered the build phase...
       - echo Build started on `date`
-      - npm run build:ssr
+      - npm run prerender
   post_build:
     commands:
       - echo Entered the post_build phase...
