@@ -2,6 +2,7 @@
 
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
+import { environment } from "src/environments/environment";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
@@ -64,6 +65,7 @@ import { DownloadService } from "./services/downloads.service";
 import { ShareButtonsModule } from 'ngx-sharebuttons/buttons';
 import { ShareIconsModule } from 'ngx-sharebuttons/icons';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { NgxGoogleAnalyticsModule, NgxGoogleAnalyticsRouterModule } from 'ngx-google-analytics';
 
 @NgModule({
   declarations: [
@@ -128,7 +130,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     HttpClientModule,
     ShareButtonsModule,
     ShareIconsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    NgxGoogleAnalyticsModule.forRoot(environment.ga),
+    NgxGoogleAnalyticsRouterModule
   ],
   providers: [DownloadService],
   bootstrap: [AppComponent],
