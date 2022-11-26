@@ -19,7 +19,7 @@ export class HomeOneComponent implements OnInit {
     this.meta.addTags([
       { name: "description", content: "The home of Gadfly & G# Movement where they are giving away their new indie folk-rock album for free." },
       { name: "author", content: "Zach DeGeorge" },
-      { name: "keywordsb", content: "Gadfly, G# Movement, indie, music, folk-rock, We Shall Prevail, Zach DeGeorge, Zachary DeGeorge, Samuel P Lauzon, Tobi Wats, Thiago Alves, Matt Mooney, Chase Holton, Doug Cowan, Timmy Jay, Domenick DeGeorge, The Usual Stoopkid, new music, free music" },
+      { name: "keywords", content: "Gadfly, G# Movement, indie, music, folk-rock, We Shall Prevail, Zach DeGeorge, Zachary DeGeorge, Samuel P Lauzon, Tobi Wats, Thiago Alves, Matt Mooney, Chase Holton, Doug Cowan, Timmy Jay, Domenick DeGeorge, The Usual Stoopkid, new music, free music" },
       { name: "robots", content: "index, follow" },
       { charset: "UTF-8" },
       { name: "date", content: "2022-11-26", scheme: "YYYY-MM-DD" }
