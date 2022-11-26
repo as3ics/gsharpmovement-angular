@@ -123,7 +123,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ToastrModule.forRoot({}),
+    ToastrModule.forRoot({ closeButton: true, maxOpened: 1, autoDismiss: true, tapToDismiss: true }),
     BrowserAnimationsModule,
     HttpClientModule,
     ShareButtonsModule,

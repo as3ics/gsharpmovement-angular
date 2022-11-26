@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-cta',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cta.component.scss']
 })
 export class CtaComponent implements OnInit {
+
+  buttonText: string = environment.downloadButtonText;
 
   constructor() { }
 

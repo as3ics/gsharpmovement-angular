@@ -32,7 +32,7 @@ export class NavbarComponent implements OnInit {
   constructor(
     private viewportScroller: ViewportScroller,
     private toastr: ToastrService
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.init();
@@ -83,7 +83,7 @@ export class NavbarComponent implements OnInit {
     $("#mute-navbar").css("display", "none");
     $("#play-navbar").css("display", "block");
     await NavbarComponent.stop();
-    this.toastr.error("", "Media Playback Halted");
+    this.toastr.show("Support the Movement; Sharing is Caring.", "Playback Playback Halted");
   }
 
   async startAudio(
@@ -103,14 +103,14 @@ export class NavbarComponent implements OnInit {
     try {
       await NavbarComponent.audio.play();
       localStorage.setItem(PLAY_BUTTON_LS, PlayButtonValues.PLAYING);
-    } catch (err) {}
+    } catch (err) { }
   }
 
   async stop() {
     try {
       await NavbarComponent.audio.pause();
       localStorage.setItem(PLAY_BUTTON_LS, PlayButtonValues.STOPPED);
-    } catch (err) {}
+    } catch (err) { }
   }
 
   played = false;
@@ -142,7 +142,7 @@ export class NavbarComponent implements OnInit {
     try {
       await this.audio.play();
       localStorage.setItem(PLAY_BUTTON_LS, PlayButtonValues.PLAYING);
-    } catch (err) {}
+    } catch (err) { }
   }
 
   static async stop() {
@@ -151,6 +151,6 @@ export class NavbarComponent implements OnInit {
     try {
       await this.audio.pause();
       localStorage.setItem(PLAY_BUTTON_LS, PlayButtonValues.STOPPED);
-    } catch (err) {}
+    } catch (err) { }
   }
 }

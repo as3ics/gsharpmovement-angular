@@ -9,9 +9,9 @@ import { ToastrService } from "ngx-toastr";
   styleUrls: ["./services.component.scss"],
 })
 export class ServicesComponent implements OnInit {
-  constructor(private toastr: ToastrService) {}
+  constructor(private toastr: ToastrService) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   play(
     source: string = "assets/album/01.mp3",
@@ -24,6 +24,6 @@ export class ServicesComponent implements OnInit {
 
   stop(silent: boolean = false) {
     NavbarComponent.stop();
-    if (!silent) this.toastr.error("", "Media Playback Halted");
+    if (!silent) this.toastr.error("We hope you enjoyed our music.", "Media Playback Halted");
   }
 }

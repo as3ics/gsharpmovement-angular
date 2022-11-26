@@ -2,6 +2,7 @@
 
 import { Component, OnInit } from "@angular/core";
 import { DownloadService } from "src/app/services/downloads.service";
+import { environment } from "src/environments/environment";
 
 @Component({
   selector: "app-home-one",
@@ -9,6 +10,9 @@ import { DownloadService } from "src/app/services/downloads.service";
   styleUrls: ["./home-one.component.scss"],
 })
 export class HomeOneComponent implements OnInit {
+
+  buttonText: string = environment.downloadButtonText;
+
   constructor(private downloadService: DownloadService) { }
 
   ngOnInit() { }

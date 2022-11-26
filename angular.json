@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/we-shall-prevail",
+            "outputPath": "dist/weshallprevail",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -41,7 +41,7 @@
               "src/assets/css/odometer.min.css",
               "src/assets/css/magnific-popup.min.css",
               "src/styles.scss",
-              "src/responsive.scss",
+              "src/responsive.scss"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
