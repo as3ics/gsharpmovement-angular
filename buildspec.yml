@@ -24,4 +24,4 @@ artifacts:
   files:
     - "**/*"
   name: weshallprevail-$(date +%Y-%m-%d) \
-  base-directory: dist/weshallprevail
+  base-directory: dist/weshallprevail/browser
