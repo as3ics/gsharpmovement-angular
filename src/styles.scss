@@ -228,9 +228,11 @@ img {
 
     b {
       font-weight: 600 !important;
-      background: linear-gradient(to bottom,
-          rgba(0, 0, 0, 0) 80%,
-          $main-color 80%);
+      background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0) 80%,
+        $main-color 80%
+      );
       background-size: 90px 1.1em !important;
     }
   }
@@ -548,7 +550,7 @@ Navbar CSS
   }
 
   .navbar-expand-lg {
-    >.container {
+    > .container {
       height: 100px; // Modified mobile navbar height when sticky
 
       padding: {
@@ -776,9 +778,11 @@ Main Banner CSS
     }
 
     b {
-      background: linear-gradient(to bottom,
-          rgba(0, 0, 0, 0) 80%,
-          $main-color 80%);
+      background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0) 80%,
+        $main-color 80%
+      );
       background-size: 100px 1.2em !important;
 
       font: {
@@ -788,9 +792,11 @@ Main Banner CSS
     }
 
     .typewrite {
-      background: linear-gradient(to bottom,
-          rgba(0, 0, 0, 0) 80%,
-          $main-color 80%);
+      background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0) 80%,
+        $main-color 80%
+      );
       background-size: 100px 1em !important;
       display: inline-block;
 
@@ -878,6 +884,54 @@ Main Banner CSS
       }
     }
   }
+
+  form {
+    position: relative;
+
+    .form-control {
+      box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+      border: none;
+      height: 75px;
+      border-radius: 50px;
+      padding-left: 20px;
+      color: $black-color;
+
+      font: {
+        weight: 500;
+        size: 16px;
+      }
+
+      &::placeholder {
+        color: $paragraph-color;
+      }
+    }
+
+    button {
+      position: absolute;
+      right: 7px;
+      border-radius: 30px;
+      top: 7px;
+      height: 60px;
+      width: 175px;
+      background: $main-color;
+      border: none;
+      outline: 0;
+      cursor: pointer;
+      transition: $transition;
+      color: $white-color;
+
+      font: {
+        weight: 600;
+        size: 16px;
+      }
+
+      &:hover,
+      &:focus {
+        background-color: $black-color;
+        color: $white-color;
+      }
+    }
+  }
 }
 
 .main-banner {
@@ -944,12 +998,14 @@ Main Banner CSS
   overflow: hidden;
 
   &::before {
-    background: linear-gradient(to bottom,
-        #0975bc,
-        #0d5b93,
-        #0d426d,
-        #092b48,
-        #041527);
+    background: linear-gradient(
+      to bottom,
+      #0975bc,
+      #0d5b93,
+      #0d426d,
+      #092b48,
+      #041527
+    );
     width: 100%;
     height: 100%;
     left: 0;
@@ -1137,12 +1193,14 @@ Main Banner CSS
 .gradient-banner {
   &.main-banner {
     &::before {
-      background: linear-gradient(to left bottom,
-          #292e49,
-          #303d55,
-          #394b61,
-          #455a6b,
-          #536976);
+      background: linear-gradient(
+        to left bottom,
+        #292e49,
+        #303d55,
+        #394b61,
+        #455a6b,
+        #536976
+      );
       opacity: 0.9;
     }
   }
@@ -1210,7 +1268,6 @@ Main Banner CSS
 }
 
 @keyframes ripple {
-
   0%,
   35% {
     transform: scale(0);
@@ -1518,9 +1575,11 @@ About CSS
 
     b {
       font-weight: 600 !important;
-      background: linear-gradient(to bottom,
-          rgba(0, 0, 0, 0) 80%,
-          $main-color 80%);
+      background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0) 80%,
+        $main-color 80%
+      );
       background-size: 90px 1.1em !important;
     }
   }
@@ -1607,9 +1666,11 @@ CTA CSS
 
       b {
         font-weight: 600 !important;
-        background: linear-gradient(to bottom,
-            rgba(0, 0, 0, 0) 80%,
-            $black-color 80%);
+        background: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0) 80%,
+          $black-color 80%
+        );
         background-size: 90px 1.1em !important;
       }
     }
@@ -1745,7 +1806,6 @@ Services CSS
     }
 
     .services-content {
-
       h3,
       p {
         color: $white-color;
@@ -1860,9 +1920,11 @@ Skill CSS
       color: $white-color;
 
       b {
-        background: linear-gradient(to bottom,
-            rgba(0, 0, 0, 0) 80%,
-            $black-color 80%);
+        background: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0) 80%,
+          $black-color 80%
+        );
       }
     }
 
@@ -2311,11 +2373,10 @@ Fun Facts CSS
 =================================================*/
 
 .plus {
-  color: #A1A334;
+  color: #a1a334;
   font-size: larger;
   font-weight: bolder;
 }
-
 
 .funfacts-area {
   position: relative;
@@ -2929,7 +2990,7 @@ Testimonial CSS
   &.owl-theme {
     .owl-nav {
       &.disabled {
-        +.owl-dots {
+        + .owl-dots {
           margin-top: 25px;
           line-height: 0.01;
         }
@@ -3251,7 +3312,7 @@ Blog CSS
   &.owl-theme {
     .owl-nav {
       &.disabled {
-        +.owl-dots {
+        + .owl-dots {
           margin-top: 25px;
           line-height: 0.01;
         }
@@ -3352,7 +3413,6 @@ Partner CSS
 
   &:hover,
   &:focus {
-
     &::after,
     &::before {
       width: 40px;
@@ -3406,9 +3466,11 @@ Subscribe CSS
 
     b {
       font-weight: 600 !important;
-      background: linear-gradient(to bottom,
-          rgba(0, 0, 0, 0) 80%,
-          $main-color 80%);
+      background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0) 80%,
+        $main-color 80%
+      );
       background-size: 90px 1.1em !important;
     }
   }
@@ -4096,7 +4158,6 @@ Blog Details CSS
 }
 
 .comments-area {
-
   .comments-title,
   .comment-reply-title {
     margin-bottom: 25px;
@@ -4118,7 +4179,6 @@ Blog Details CSS
     list-style-type: none;
 
     li {
-
       ol,
       ul {
         li {
@@ -4220,7 +4280,6 @@ Blog Details CSS
     .comment-form-author,
     .comment-form-email,
     .comment-form-url {
-
       input,
       textarea {
         display: block;

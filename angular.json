@@ -25,11 +25,7 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets",
-              "src/BingSiteAuth.xml"
-            ],
+            "assets": ["src/favicon.ico", "src/assets", "src/BingSiteAuth.xml"],
             "styles": [
               "node_modules/bootstrap/scss/bootstrap.scss",
               "node_modules/owl.carousel/dist/assets/owl.carousel.min.css",
@@ -120,13 +116,8 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.scss"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
+            "styles": ["src/styles.scss"],
             "scripts": []
           }
         },
@@ -187,9 +178,7 @@
           "options": {
             "browserTarget": "weshallprevail:build:production",
             "serverTarget": "weshallprevail:server:production",
-            "routes": [
-              "/"
-            ]
+            "routes": ["/"]
           },
           "configurations": {
             "production": {

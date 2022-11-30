@@ -8,22 +8,21 @@
           <!-- <span>Welcome <b>Gadfly & G# Movement</b></span> -->
           <h1 style="font-size: 36px">
             Get your
-            <b>Free Copy</b> of the newly released <i>indie folk-rock</i> album
+            <b>Free Copy</b> of the newly released
+            <i>indie folk-rock</i> sensation
             <b>"We Shall Prevail"</b>
           </h1>
           <p style="font-size: 15px">
             <b>Don't miss out</b> on this opportunity to download a completely
-            authentic & open-sourced digital copy of
-            <b>Gadfly & G# Movement</b>'s (pronounced /'gee-sharp/) new studio
-            album release <b>"We Shall Prevail (2022 Remaster)"</b>. This
-            opportunity is brought to you by the band itself in an effort to
-            expand the audience of the album by making
-            <b>access 100% free and easy</b> with
-            <b>no strings, requirements, gimmicks, or hooks attached</b>. Simply
-            click, download, & play to go about your way with the amazing sounds
-            brought to you from Gadfly & G# Movement's new
-            <i>indie folk-rock</i> musical album
-            <b>"We Shall Prevail (2022 Remaster)"</b>.
+            authentic & free digital copy of <b>Gadfly & G# Movement</b>'s
+            (pronounced /'gee-sharp/) new studio album
+            <b>"We Shall Prevail (2022 Remaster)"</b>. This opportunity is
+            brought to you by the band in an effort to expand the audience of
+            the album by any means bringing you
+            <b>100% free and easy access</b>. Simply click, download, & play to
+            go about your way with the new amazing sounds brought to you from
+            Gadfly & G# Movement's new <i>indie folk-rock</i> musical album
+            <b>"We Shall Prevail"</b>.
           </p>
           <!-- <p>
             <b
@@ -31,7 +30,7 @@
               required to get your free download right now, today.</b
             >
           </p> -->
-          <div class="btn-box">
+          <!-- <div class="btn-box">
             <a
               href="assets/album/we_shall_prevail.zip"
               (click)="emitDownload()"
@@ -39,15 +38,33 @@
             >
               {{ buttonText }}
             </a>
-            <!-- <span> or </span>
             <a
               href="https://www.youtube.com/watch?v=57HnEYpuNLs"
               class="video-btn popup-youtube"
               ><i class="icofont-ui-play"></i> Watch Music Video</a
-            > -->
-          </div>
+            >
+          </div> -->
+          <form class="newsletter-form" #f="ngForm">
+            <input
+              type="email"
+              class="form-control"
+              placeholder="Your Email Address"
+              [(ngModel)]="email.value"
+              name="email"
+              ngModel
+              required=""
+              pattern="{{ emailRegex }}"
+            />
+            <button
+              type="button"
+              (click)="emitDownload()"
+              [disabled]="!f.valid"
+            >
+              Download
+            </button>
+          </form>
           <br />
-          <h4 style="font-size: 18px; color: white">
+          <h4 style="font-size: 18px; color: white" class="pt-3">
             <span
               ><b
                 >Note: Relax! There is nothing to feel alarmed or worried about
