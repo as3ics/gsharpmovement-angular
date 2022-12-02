@@ -1,6 +1,6 @@
 /** @format */
 
-import { Component, OnInit } from "@angular/core";
+import { Component, Inject, OnInit, PLATFORM_ID } from "@angular/core";
 import {
   Router,
   NavigationStart,
@@ -14,8 +14,9 @@ import {
 } from "@angular/common";
 import { filter } from "rxjs/operators";
 import { DownloadService } from './services/downloads.service';
+import { isPlatformBrowser } from '@angular/common';
 
-declare let $: any;
+import * as $ from "jquery";
 
 @Component({
   selector: "app-root",
@@ -32,15 +33,20 @@ declare let $: any;
 export class AppComponent implements OnInit {
   location: any;
   routerSubscription: any;
+  private isBrowser: boolean;
 
-  constructor(private router: Router, private downloadService: DownloadService) { }
-
-  ngOnInit() {
-    this.recallJsFuntions();
-    this.downloadService.init();
+  constructor(private router: Router, private downloadService: DownloadService, @Inject(PLATFORM_ID) platformId: Object) {
+    this.isBrowser = isPlatformBrowser(platformId);
   }
 
-  recallJsFuntions() {
+  ngOnInit() {
+    if (this.isBrowser) {
+      this.recallJsFuntions();
+      this.downloadService.init();
+    }
+  }
+
+  async recallJsFuntions() {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationStart) {
         $(".preloader").fadeIn("slow");
@@ -53,8 +59,11 @@ export class AppComponent implements OnInit {
             event instanceof NavigationEnd || event instanceof NavigationCancel
         )
       )
-      .subscribe((event) => {
-        $.getScript("../assets/js/main.js");
+      .subscribe(async (event) => {
+        await $.getScript("../assets/js/main.js", (success) => {
+          console.log(success);
+        });
+
         $(".preloader").fadeOut("slow");
         this.location = this.router.url;
         if (!(event instanceof NavigationEnd)) {

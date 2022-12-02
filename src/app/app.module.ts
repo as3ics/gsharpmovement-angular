@@ -66,6 +66,7 @@ import { ShareButtonsModule } from 'ngx-sharebuttons/buttons';
 import { ShareIconsModule } from 'ngx-sharebuttons/icons';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgxGoogleAnalyticsModule, NgxGoogleAnalyticsRouterModule } from 'ngx-google-analytics';
+import { NFTComponent } from "./components/layouts/nfts/nfts.component";
 
 @NgModule({
   declarations: [
@@ -119,7 +120,8 @@ import { NgxGoogleAnalyticsModule, NgxGoogleAnalyticsRouterModule } from 'ngx-go
     BlogDetailsComponent,
     ErrorComponent,
     DemoSidebarComponent,
-    WhoWeAreCloneComponent
+    WhoWeAreCloneComponent,
+    NFTComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

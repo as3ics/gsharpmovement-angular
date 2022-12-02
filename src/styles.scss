@@ -19,7 +19,7 @@ $transition: 0.5s;
 
 
 .timer {
-  h4 {
+  h3 {
     color: white;
   }
 
@@ -2270,6 +2270,14 @@ Portfolio CSS
         height: 50%;
         width: 100%;
         left: -100%;
+      }
+
+      // span.nft {
+      //   font-size: 7px;
+      // }
+
+      a {
+        color: white;
       }
 
       h3 {

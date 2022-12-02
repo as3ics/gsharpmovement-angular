@@ -2,19 +2,18 @@
 
 import {
   Component,
-  ElementRef,
   EventEmitter,
-  HostListener,
   Inject,
   OnInit,
   Output,
 } from "@angular/core";
 import { ViewportScroller } from "@angular/common";
-import * as $ from "jquery";
 import { delay } from "rxjs/operators";
 import { ToastrService } from "ngx-toastr";
 import { PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
+
+import * as $ from "jquery";
 
 export const PLAY_BUTTON_LS = "LOCAL_STORAGE_PLAY_BUTTON";
 
