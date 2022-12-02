@@ -125,7 +125,7 @@ import { NgxGoogleAnalyticsModule, NgxGoogleAnalyticsRouterModule } from 'ngx-go
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     FormsModule,
-    ToastrModule.forRoot({ closeButton: true, maxOpened: 1, autoDismiss: true, tapToDismiss: true }),
+    ToastrModule.forRoot({ closeButton: true, maxOpened: 1, autoDismiss: true, tapToDismiss: true, timeOut: 5000 }),
     BrowserAnimationsModule,
     HttpClientModule,
     ShareButtonsModule,

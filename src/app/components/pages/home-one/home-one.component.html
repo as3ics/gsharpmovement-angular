@@ -7,22 +7,18 @@
         <div class="main-banner-content text-center">
           <!-- <span>Welcome <b>Gadfly & G# Movement</b></span> -->
           <h1 style="font-size: 36px">
-            Get your
-            <b>Free Copy</b> of the newly released
-            <i>indie folk-rock</i> sensation
-            <b>"We Shall Prevail"</b>
+            Download
+            <b>Free Copy</b> of our new album
+            <b>"We Shall Prevail"</b> and get <b>Free Crypto & NFTs</b>
           </h1>
           <p style="font-size: 15px">
-            <b>Don't miss out</b> on this opportunity to download a completely
-            authentic & free digital copy of <b>Gadfly & G# Movement</b>'s
-            (pronounced /'gee-sharp/) new studio album
-            <b>"We Shall Prevail (2022 Remaster)"</b>. This opportunity is
-            brought to you by the band in an effort to expand the audience of
-            the album by any means bringing you
-            <b>100% free and easy access</b>. Simply click, download, & play to
-            go about your way with the new amazing sounds brought to you from
-            Gadfly & G# Movement's new <i>indie folk-rock</i> musical album
-            <b>"We Shall Prevail"</b>.
+            We know that you will love our new album so much that we are giving away <b>Free Crypto & NFTs Just for
+              Downloading the Free Album</b>. Sign-up today and get on the drop list for our <b>Free Crypto &
+              NFT
+              Drops & Giveaways</b>, as we launch our album & cryptocurrency company. We want you to
+            listen to our
+            album so bad that we will literally pay you in crypto just to take the damn thing. Please support us by
+            sharing this opportunity with your friends & family.
           </p>
           <!-- <p>
             <b
@@ -45,35 +41,20 @@
             >
           </div> -->
           <form class="newsletter-form" #f="ngForm">
-            <input
-              type="email"
-              class="form-control"
-              placeholder="Your Email Address"
-              [(ngModel)]="email.value"
-              name="email"
-              ngModel
-              required=""
-              pattern="{{ emailRegex }}"
-            />
-            <button
-              type="button"
-              (click)="emitDownload()"
-              [disabled]="!f.valid"
-            >
+            <input type="email" class="form-control" placeholder="Your Email Address" [(ngModel)]="email.value"
+              name="email" ngModel required="" pattern="{{ emailRegex }}" />
+            <button type="button" (click)="emitDownload()" [disabled]="!f.valid">
               Download
             </button>
           </form>
           <br />
           <h4 style="font-size: 18px; color: white" class="pt-3">
-            <span
-              ><b
-                >Note: Relax! There is nothing to feel alarmed or worried about
-                from the news of this amazing offer! There are no threats or
-                danger to you, at least not from us, besides the possible
-                irresistable desire to act now and not miss out on this amazing
-                oppurtunity for some awesome new ear-candy!</b
-              ></span
-            >
+            <span><b>Don't miss out on this opportunity to get free insider access to the new crypto of
+                AS3ICS Web3.0
+                while risking absolutely nothing. At a bare minimum you are at least going to get an amazing free indie
+                folk-rock
+                album from Gadfly & G# Movement, but we promise there will is much more to come! This is only the
+                beginning.</b></span>
             <!-- <br />
             To participate in this offer there are no questions to answer, or
             forms to fill out. We simply ask that you share in the joy of our
@@ -91,6 +72,13 @@
             you may experience all of the pleasure & joy we each had while
             creating the music that eventually made its way onto this album. -->
           </h4>
+        </div>
+        <div class="timer pt-5">
+          <h4> Crypto Drops Jan 1, 2023 at 0:00 EST </h4>
+          <span id="days"> {{daysToDday}} </span>Day(s)
+          <span id="hours"> {{hoursToDday}} </span>Hrs
+          <span id="minutes"> {{minutesToDday}} </span>Min
+          <span id="seconds"> {{secondsToDday}} </span>S
         </div>
       </div>
     </div>
