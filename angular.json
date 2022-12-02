@@ -6,7 +6,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "weshallprevail": {
+    "gsharpmovement": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,12 +20,16 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/weshallprevail/browser",
+            "outputPath": "dist/gsharpmovement/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "assets": ["src/favicon.ico", "src/assets", "src/BingSiteAuth.xml"],
+            "assets": [
+              "src/favicon.ico",
+              "src/assets",
+              "src/BingSiteAuth.xml"
+            ],
             "styles": [
               "node_modules/bootstrap/scss/bootstrap.scss",
               "node_modules/owl.carousel/dist/assets/owl.carousel.min.css",
@@ -95,18 +99,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "weshallprevail:build"
+            "browserTarget": "gsharpmovement:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "weshallprevail:build:production"
+              "browserTarget": "gsharpmovement:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "weshallprevail:build"
+            "browserTarget": "gsharpmovement:build"
           }
         },
         "test": {
@@ -116,8 +120,13 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
-            "assets": ["src/favicon.ico", "src/assets"],
-            "styles": ["src/styles.scss"],
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+              "src/styles.scss"
+            ],
             "scripts": []
           }
         },
@@ -125,18 +134,18 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "weshallprevail:serve"
+            "devServerTarget": "gsharpmovement:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "weshallprevail:serve:production"
+              "devServerTarget": "gsharpmovement:serve:production"
             }
           }
         },
         "server": {
           "builder": "@angular-devkit/build-angular:server",
           "options": {
-            "outputPath": "dist/weshallprevail/server",
+            "outputPath": "dist/gsharpmovement/server",
             "main": "server.ts",
             "tsConfig": "tsconfig.server.json",
             "optimization": false,
@@ -163,12 +172,12 @@
           "builder": "@nguniversal/builders:ssr-dev-server",
           "configurations": {
             "development": {
-              "browserTarget": "weshallprevail:build:development",
-              "serverTarget": "weshallprevail:server:development"
+              "browserTarget": "gsharpmovement:build:development",
+              "serverTarget": "gsharpmovement:server:development"
             },
             "production": {
-              "browserTarget": "weshallprevail:build:production",
-              "serverTarget": "weshallprevail:server:production"
+              "browserTarget": "gsharpmovement:build:production",
+              "serverTarget": "gsharpmovement:server:production"
             }
           },
           "defaultConfiguration": "development"
@@ -176,18 +185,20 @@
         "prerender": {
           "builder": "@nguniversal/builders:prerender",
           "options": {
-            "browserTarget": "weshallprevail:build:production",
-            "serverTarget": "weshallprevail:server:production",
-            "routes": ["/"]
+            "browserTarget": "gsharpmovement:build:production",
+            "serverTarget": "gsharpmovement:server:production",
+            "routes": [
+              "/"
+            ]
           },
           "configurations": {
             "production": {
-              "browserTarget": "weshallprevail:build:production",
-              "serverTarget": "weshallprevail:server:production"
+              "browserTarget": "gsharpmovement:build:production",
+              "serverTarget": "gsharpmovement:server:production"
             },
             "development": {
-              "browserTarget": "weshallprevail:build:development",
-              "serverTarget": "weshallprevail:server:development"
+              "browserTarget": "gsharpmovement:build:development",
+              "serverTarget": "gsharpmovement:server:development"
             }
           },
           "defaultConfiguration": "production"
@@ -195,5 +206,5 @@
       }
     }
   },
-  "defaultProject": "weshallprevail"
+  "defaultProject": "gsharpmovement"
 }

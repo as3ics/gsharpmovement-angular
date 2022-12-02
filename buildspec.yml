@@ -23,5 +23,5 @@ phases:
 artifacts:
   files:
     - "**/*"
-  name: weshallprevail-$(date +%Y-%m-%d) \
-  base-directory: dist/weshallprevail/browser
+  name: gsharpmovement-$(date +%Y-%m-%d) \
+  base-directory: dist/gsharpmovement/browser

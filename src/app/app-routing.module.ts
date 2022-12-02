@@ -26,32 +26,32 @@ import { BlogDetailsComponent } from './components/pages/blog-details/blog-detai
 import { ErrorComponent } from './components/pages/error/error.component';
 
 const routes: Routes = [
-    {path: '', component: HomeOneComponent},
-    {path: 'home-2', component: HomeTwoComponent},
-    {path: 'home-3', component: HomeThreeComponent},
-    {path: 'home-4', component: HomeFourComponent},
-    {path: 'home-5', component: HomeFiveComponent},
-    {path: 'home-6', component: HomeSixComponent},
-    {path: 'home-7', component: HomeSevenComponent},
-    {path: 'home-8', component: HomeEightComponent},
-    {path: 'home-9', component: HomeNineComponent},
-    {path: 'home-10', component: HomeTenComponent},
-    {path: 'home-11', component: HomeElevenComponent},
-    {path: 'home-12', component: HomeTwelveComponent},
-    {path: 'home-13', component: HomeThirteenComponent},
-    {path: 'home-14', component: HomeFourteenComponent},
-    {path: 'home-15', component: HomeFifteenComponent},
-    {path: 'home-16', component: HomeSixteenComponent},
-    {path: 'home-17', component: HomeSeventeenComponent},
-    {path: 'home-18', component: HomeEighteenComponent},
-    {path: 'home-19', component: HomeNineteenComponent},
-    {path: 'home-20', component: HomeTwentyComponent},
-    {path: 'blog-1', component: BlogOneComponent},
-    {path: 'blog-2', component: BlogTwoComponent},
-    {path: 'blog-details', component: BlogDetailsComponent},
+    { path: '', component: HomeOneComponent },
+    // {path: 'home-2', component: HomeTwoComponent},
+    // {path: 'home-3', component: HomeThreeComponent},
+    // {path: 'home-4', component: HomeFourComponent},
+    // {path: 'home-5', component: HomeFiveComponent},
+    // {path: 'home-6', component: HomeSixComponent},
+    // {path: 'home-7', component: HomeSevenComponent},
+    // {path: 'home-8', component: HomeEightComponent},
+    // {path: 'home-9', component: HomeNineComponent},
+    // {path: 'home-10', component: HomeTenComponent},
+    // {path: 'home-11', component: HomeElevenComponent},
+    // {path: 'home-12', component: HomeTwelveComponent},
+    // {path: 'home-13', component: HomeThirteenComponent},
+    // {path: 'home-14', component: HomeFourteenComponent},
+    // {path: 'home-15', component: HomeFifteenComponent},
+    // {path: 'home-16', component: HomeSixteenComponent},
+    // {path: 'home-17', component: HomeSeventeenComponent},
+    // {path: 'home-18', component: HomeEighteenComponent},
+    // {path: 'home-19', component: HomeNineteenComponent},
+    // {path: 'home-20', component: HomeTwentyComponent},
+    // {path: 'blog-1', component: BlogOneComponent},
+    // {path: 'blog-2', component: BlogTwoComponent},
+    // {path: 'blog-details', component: BlogDetailsComponent},
     // Here add new pages component
 
-    {path: '**', component: ErrorComponent} // This line will remain down from the whole pages component list
+    { path: '**', component: ErrorComponent } // This line will remain down from the whole pages component list
 ];
 
 @NgModule({

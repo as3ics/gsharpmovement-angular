@@ -1,5 +1,5 @@
 {
-  "name": "weshallprevail",
+  "name": "gsharpmovement",
   "version": "1.4.0",
   "scripts": {
     "ng": "ng",
@@ -8,10 +8,10 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "dev:ssr": "ng run weshallprevail:serve-ssr",
-    "serve:ssr": "node dist/weshallprevail/server/main.js",
-    "build:ssr": "ng build && ng run weshallprevail:server",
-    "prerender": "ng run weshallprevail:prerender",
+    "dev:ssr": "ng run gsharpmovement:serve-ssr",
+    "serve:ssr": "node dist/gsharpmovement/server/main.js",
+    "build:ssr": "ng build && ng run gsharpmovement:server",
+    "prerender": "ng run gsharpmovement:prerender",
     "upgrade": "ng update @angular/core@14 @angular/cli@14",
     "version": "ng --version"
   },
