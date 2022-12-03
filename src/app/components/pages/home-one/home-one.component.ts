@@ -54,6 +54,12 @@ export class HomeOneComponent implements OnInit {
   ngOnInit() {
     this.subscription = interval(1000)
       .subscribe(x => { this.getTimeDifference(); });
+
+    this.init();
+  }
+
+  async init() {
+    await this.downloadService.hit();
   }
 
   ngOnDestroy() {

@@ -83,7 +83,7 @@ export class NavbarComponent implements OnInit {
         this.played = false;
       }
 
-      console.log("PrevPlay: " + prevPlay);
+      // console.log("PrevPlay: " + prevPlay);
     }
   }
 
@@ -92,7 +92,7 @@ export class NavbarComponent implements OnInit {
   }
 
   async stopAudio() {
-    console.log("Stop Audio");
+    // console.log("Stop Audio");
     $("#mute-navbar").css("display", "none");
     $("#play-navbar").css("display", "block");
     await NavbarComponent.stop();
@@ -103,7 +103,7 @@ export class NavbarComponent implements OnInit {
     source: string = "assets/album/01.mp3",
     label: string = "01. Life is a Journey (feat. Thiago Alves)"
   ) {
-    console.log("Start Audio");
+    // console.log("Start Audio");
     $("#play-navbar").css("display", "none");
     $("#mute-navbar").css("display", "block");
     await NavbarComponent.play(source);

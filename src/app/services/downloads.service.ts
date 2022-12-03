@@ -35,17 +35,42 @@ export class DownloadService {
     }
 
     private async track(email) {
-        console.log("Fetching IP Address");
-        console.log(email);
+        // console.log("Fetching IP Address");
+        // console.log(email);
         this.http.get(environment.ipApiUrl).subscribe(async (res: any) => {
-            console.log(res);
+            // console.log(res);
             await this.add(email, res);
             // this.ipSubject.next(res);
         });
     }
 
+    async hit() {
+        this.http.get(environment.ipApiUrl).subscribe(async (res: any) => {
+            let connection = res['connection'];
+            let currency = res['currency'];
+            let flag = res['flag'];
+            let security = res['security'];
+            let timezone = res['timezone'];
+            delete res['connection'];
+            delete res['currency'];
+            delete res['flag'];
+            delete res['security'];
+            delete res['timezone'];
+            res['connection'] = JSON.stringify(connection);
+            res['currency'] = JSON.stringify(currency);
+            res['flag'] = JSON.stringify(flag);
+            res['security'] = JSON.stringify(security);
+            res['timezone'] = JSON.stringify(timezone);
+            this.http.post(`${environment.apiUrl}/hit`, { id: 0, ...res }).subscribe((res: any) => {
+
+            }, (err) => {
+
+            });
+        });
+    }
+
     async add(email?: string, ip?: Object) {
-        console.log(`'${email}' add attempt`);
+        // console.log(`'${email}' add attempt`);
         if (email) {
             let connection = ip['connection'];
             let currency = ip['currency'];
@@ -63,10 +88,10 @@ export class DownloadService {
             ip['security'] = JSON.stringify(security);
             ip['timezone'] = JSON.stringify(timezone);
             this.http.post(`${environment.apiUrl}/email`, { id: 0, email, ...ip }).subscribe((res: any) => {
-                console.log(res);
+                // console.log(res);
                 this.toastr.success("You have successfully been added to the drop list. Details to come soon.", "Success!");
             }, (err) => {
-                console.error(err);
+                // console.error(err);
                 this.toastr.error("There was an error adding you to the drop. Please downlaod again, perhaps with a different email, or you will not get your free crypto.", "Error");
             });
         }
@@ -81,7 +106,7 @@ export class DownloadService {
                     //     console.log("Download emitted!");
                     // })
                 } catch (err) {
-                    console.log(err);
+                    // console.log(err);
                 }
             }
         })

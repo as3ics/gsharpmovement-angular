@@ -61,7 +61,6 @@ export class AppComponent implements OnInit {
       )
       .subscribe(async (event) => {
         await $.getScript("../assets/js/main.js", (success) => {
-          console.log(success);
         });
 
         $(".preloader").fadeOut("slow");
